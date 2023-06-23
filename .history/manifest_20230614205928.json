@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "Daily Redpill Podcast",
+    "description": "Get a new podcast recommendation every day",
+    "version": "1.0",
+    "permissions": ["storage"],
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  
