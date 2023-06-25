@@ -2,12 +2,12 @@ body {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+  justify-content: flex-start; 
+  align-items: flex-start; /* Align items at the start */
   margin: 0;
-  flex-direction: column; /* Arrange items vertically */
-  padding: 20px; /* Add some padding around the whole body */
-  overflow: auto; /* Allow scrolling on the whole body if needed */
+  flex-direction: column; /* arrange items vertically */
+  padding: 20px; /* add some padding around the whole body */
+  overflow: auto; /* allow scrolling on the whole body if needed */
 }
 
 #header {
@@ -68,6 +68,7 @@ body {
   height: auto; /* Adjust this to change the height of the podcast list */
   overflow-y: auto; /* Enable vertical scrolling for the podcast list */
 }
+
 
 #podcast-list-items li {
   margin-bottom: 10px;

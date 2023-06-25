@@ -33,13 +33,16 @@ function loadPodcasts() {
       var newPodcastName = document.getElementById('podcastName').value;
       var newPodcastLink = document.getElementById('podcastLink').value;
       var newPodcastImage = document.getElementById('podcastImage').value;
-      var keyPoints = document.getElementById('keyPoints').value;
+      var point1 = document.getElementById('point1').value;
+      var point2 = document.getElementById('point2').value;
+      var point3 = document.getElementById('point3').value;
+
   
       var podcast = {
         name: newPodcastName,
         link: newPodcastLink,
         image: newPodcastImage,
-        keyPoints: keyPoints
+        points: [point1, point2, point3]
       };
   
       // Use the date as the key instead of the current day of the month
@@ -55,3 +58,5 @@ function loadPodcasts() {
   
   // Load the saved podcasts when the page is opened
   loadPodcasts();
+
+  

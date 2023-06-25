@@ -28,7 +28,7 @@ function loadPodcasts() {
   document.getElementById('submit').addEventListener('click', function() {
     var password = document.getElementById('password').value;
   
-    if (password === '12345') {
+    if (password === 'your_password_here') {
       var date = document.getElementById('date').value;
       var newPodcastName = document.getElementById('podcastName').value;
       var newPodcastLink = document.getElementById('podcastLink').value;
