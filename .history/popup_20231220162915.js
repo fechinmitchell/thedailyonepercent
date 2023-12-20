@@ -12,7 +12,7 @@ function toggleDarkMode() {
   document.addEventListener('DOMContentLoaded', function() {
     var darkModeCheckbox = document.getElementById('dark-mode-checkbox');
     var currentTheme = localStorage.getItem('theme');
-    
+  
     // Set the dark mode based on the saved setting
     if (currentTheme === 'dark') {
       document.body.classList.add('dark-mode');
@@ -26,10 +26,9 @@ function toggleDarkMode() {
     var date = new Date();
     var dateString = date.toISOString().slice(0,10); // "YYYY-MM-DD"
     var podcastElement = document.getElementById('podcast');
-    var podcastImageElement = document.getElementById('podcast-image');
     var podcastPointsElement = document.getElementById('podcast-points');
   
-    fetch('https://raw.githubusercontent.com/fechinmitchell/RedPillPodcasts/main/podcast-data.json')
+    fetch('https://raw.githubusercontent.com/fechinmitchell/thedailyonepercent/main/podcast-data.json')
       .then(response => response.json())
       .then(data => {
         var podcast = data[dateString];
@@ -40,11 +39,11 @@ function toggleDarkMode() {
           link.innerText = podcast.name;
           podcastElement.appendChild(link);
   
-          podcastImageElement.src = podcast.image || "placeholder.jpg";
+          // Removed the line that sets the podcast image src
           podcastPointsElement.innerText = podcast.keyPoints;
         } else {
           podcastElement.innerText = 'No podcast for today.';
-          podcastImageElement.src = "placeholder.jpg";
+          // Removed the line that sets a placeholder image
         }
       })
       .catch(error => {
@@ -52,5 +51,6 @@ function toggleDarkMode() {
         podcastElement.innerText = 'Failed to load podcast data.';
       });
   });
+  
   
   

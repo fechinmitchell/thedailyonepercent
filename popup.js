@@ -28,7 +28,7 @@ function toggleDarkMode() {
     var podcastElement = document.getElementById('podcast');
     var podcastPointsElement = document.getElementById('podcast-points');
   
-    fetch('https://raw.githubusercontent.com/fechinmitchell/RedPillPodcasts/main/podcast-data.json')
+    fetch('https://raw.githubusercontent.com/fechinmitchell/thedailyonepercent/main/podcast-data.json')
       .then(response => response.json())
       .then(data => {
         var podcast = data[dateString];
