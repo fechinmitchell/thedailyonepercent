@@ -1,0 +1,758 @@
+0:00
+all right so at this point you may have heard about qar the leaked Next Generation opening eyes new model that
+0:07
+some people are saying is a sign that we're approaching or we're already at AGI according to Reuters Summit open AI
+0:13
+believed that qar could be a breakthrough in the startup search for what's known as artificial general
+0:18
+intelligence now it's important to understand that a lot of this is its leaks it's Anonymous sources it's little
+0:25
+Clues and bits and pieces of information that we're all trying to put together so just kind of keep that in mind mind that
+0:31
+when we're talking about these things I'm not claiming anything to be true I'm not trying to convince you that
+0:36
+something's happening that we know something for sure I am and a lot of other people following this were just trying to make sense of what's happening
+0:43
+because it really does seem that something big is happening specifics are
+0:48
+a bit murky now it seems like a lot of these AI Labs these tech companies that are that are working on AI it seems that
+0:55
+they are getting a little bit more secretive with what research they put out there and a lot these people that are in the Bay Area working these
+1:02
+projects there are these Whispers that were getting very very close so just recently Sam Alman said this in the last
+1:08
+couple of weeks he was in the room where we so open AI or Humanity however you
+1:14
+want to translate that quote we sort of push the veil of ignorance back and the frontier of Discovery forward which
+1:21
+sounds like and this is what a lot of people are guessing is that Sam Altman and ilas Suk and maybe some other people
+1:28
+were inside a room when they saw something a demo of some new breakthrough technology that pushed the
+1:34
+frontier of Discovery forward that expanded our knowledge which normally is a great thing but a day later the open
+1:41
+AI board fires Sam Alman this sets a whole bunch of things in motion we've
+1:46
+covered it before in a few videos I'm not going to go too much over it but it seems like quite a few people were
+1:52
+spooked they were unnerved by what they saw some had even suggested what they saw could be a threat to humanity now
+1:59
+what I think happened is that all the super powerful Venture capitalists that are interested in what's happening at
+2:04
+open a all the Microsoft people they used whatever money influence Etc that
+2:09
+they had and they really kind of tightened the screws on the people trying to seem like maybe destroy open
+2:15
+AI or at least try to merge it with anthropic whatever the case the quote unquote rebellion was quelled now it
+2:21
+comes out recently just 24 48 hours ago that the secret scary SL exciting
+2:28
+project that is making everybody act so crazy is called qar we don't know too
+2:33
+much about qar we don't know what it's referring to we just know that it's pretty good at math tons of people have been speculating on what this could mean
+2:40
+a lot of people thinking it's it has to do something with Q learning which is basically how we have trained robots and
+2:46
+AI in the past to how we reward them for certain behaviors to improve their learning abilities and over time as they
+2:52
+get better at something they know which of their actions lead to the best result and in my mind I kind of think of that
+2:58
+as kids we tend to to be more open to new experience we tend to try more things out but over time as we get older
+3:04
+we kind of figure out what we need to do to get the highest reward right we don't try as many things we kind of know what
+3:10
+we're supposed to be doing and more and more we settle into patterns to me Q learning kind of seems to resemble that
+3:15
+a little bit there's a lot of people in the AI space that are talking about this I try to listen to everyone but not
+3:21
+everyone is always accurate some people have their own hidden agendas some people seem to be very biased some
+3:26
+people are a little bit too hypy whatever but it's important to have Good Counsel when you're trying to learn about this stuff for me one of those
+3:32
+people that I kind of tend to always trust is Dr Jim fan one of the senior researchers at Nvidia so he's a senior
+3:39
+AI scientist at Nvidia Stanford PhD and kind of like one of his lifelong missions is to build AI agents as he
+3:46
+says across realities so if you've seen the voyager Minecraft Voyager the GPT 4
+3:51
+learns to play Minecraft we did a video about that another one of his projects was called Eureka I did a video about
+3:57
+that unfortunately for some reason Google didn't quite push it to a broader audience it was fascinating because it
+4:03
+shows that GPT 4 is really good at training robots in these sort of virtual
+4:09
+simulations it's mindblowing we might have to redo that video CU I don't think enough people saw it so this whole time
+4:15
+I'm kind of hoping that Dr jiman comes out and kind of shed some light on this Q star thing is it nonsense is there
+4:23
+something to it and yes that actually happened today he says in my decad spent on AI I've never seen an algorithm that
+4:29
+so many people fantasize about just from a name no paper no stats no product so
+4:34
+let's reverse engineer the qar fantasy my heart sank a little bit because I'm like crap now I'm going to look like the
+4:40
+guy with the tin foil hat on that's promoting various nonsense that's not true that's not doesn't have any scientific mustard to it but as I
+4:47
+started reading this I'm realizing that it seems like this qar thing maybe has
+4:53
+more bases in reality than we first even realized so let's dive in let's find out
+4:58
+what this whole thing is about after Dr Jim fan another person replied his name is Nathan Lambert I like how he has in
+5:04
+his profile he says has PhD in some credentials I I love I love how that's downplayed just you know PhD and some
+5:10
+other stuff whatever so it looks like he writes at interconnects doai and I'll link the link in the show notes but he
+5:16
+did a post today November 24th saying the qar hypothesis tree of thoughts reasoning process reward models and
+5:24
+supercharging synthetic data and Dr Jim fan responds oh wow I got scooped ha you listed a few references that I haven't
+5:30
+even read yet thanks for sharing so first of all let me start out by thanking these two AI researchers these
+5:36
+people that are doing so much for AI we're going to be looking at what they're writing their thoughts so it's
+5:41
+great to see people like this kind of correcting the discussion in the in the right direction for example this leaked
+5:47
+paper was posted to Reddit so here at the top it's saying furthermore qualia so now so they're referring to this as
+5:53
+qualia has demonstrated an ability to statistically significantly improve the way in which it selects its optimal
+5:58
+action selection policies and different deep Q networks exhibit exhibiting metacognition we'll talk about what this
+6:04
+means this we don't know if it's real or not David Shapiro covered this in his channel he went deep into what this may
+6:11
+or may not mean we may or may not get back to it later but really fast there just a few things that I think will help
+ORCA 2 and Synthetic Data
+6:17
+understand what is happening so just let me do a quick rapid fire sort of summarizations of what's going on so
+6:24
+that maybe you have a better idea of understanding what Jim and Nathan will be talking about here so first of all so
+6:29
+this is orca 2 released on 18th of November so just very recently like less than 7 days ago and it's Microsoft
+6:35
+research so this is the continuation of the Orca one paper and there's a number of cool discoveries here I did a video
+6:42
+about this and I I have it and it's kind of ready to go but I know if I release it right now because of everything else
+6:47
+that's going to that's happening is just going to Flatline that's just kind of how the Google algorithm works it's just
+6:54
+it's just there's like zero chance of it getting picked up but here's the big headline news out of this paper and I
+7:00
+think it's important to understand this piece of it and then it's going to be important to understand the tree of thoughts what that means and they do
+7:06
+talk about tree of thoughts here although I don't think they call it that interestingly enough but here's what
+7:11
+they do here so they're using gp4 to create synthetic data synthetic data
+7:18
+when you hear that word when you hear that phrase what that means is you know previously we used human data human
+7:24
+generated data to train these models right so we take all of the pictures and IM and photos of let's say dogs that
+7:31
+that humans took and Drew and whatever and we train it to draw dogs or generate
+7:36
+images of dogs right so after a while it gets pretty good at generating images of dogs and same thing with text music
+7:43
+whatever one concern was we're going to run out of highquality human generated data right there's only so many pictures
+7:50
+of dogs that a human being can take right there's only so many books and high quality texts that we have created
+7:56
+and it seems like for a lot of these AI models the more more the better so basically in order to keep growing it we got to feed it more and more and more so
+8:02
+we thought we're going to reach some sort of a a a roadblock at some point some people have suggested that the way around that is to to train it on
+8:10
+synthetic data meaning once they get good enough at doing this stuff they meaning the AI models they will produce
+8:16
+the data the text the images Etc to train the next generation of models and
+8:21
+we didn't know whether or not that will work a lot of people said it's not going to work there's going to be this like little arrow here and there that would
+8:27
+just kind of compound on themselves and just kind of corrupt the whole process like that synthetic data will not work
+8:34
+what this research seems to suggest is that synthetic data might work great and
+8:39
+it might work in maybe even different ways than we thought and in much better ways than we thought so here's the main
+8:46
+point of this paperwor or 2 at least the main point towards what we're talking about so the researchers wrote a very
+8:52
+in-depth kind of system instruction for gb4 so it's like a prompt but it's sort of like the main prompt that we give it
+8:58
+and they great detail wrote out how to solve a problem and and so the problem was to put several different sentences
+9:05
+in the correct order so they take like a story they jumble it up and then they ask and they ask the a models to sort it
+9:11
+in the correct order and so they start by creating the best prompt that's going to produce the best results from GPT 4
+9:18
+so you can see here there's like five steps like identify the main theme look for any cause and effect relationships
+9:24
+between the sentences you know think about which sentence could be the start of the story and then do this and this
+9:29
+and this and then finally write down the correct order so basically they're meticulously walking this model through
+9:35
+how to solve this problem step by step by step by step and this resembles a
+9:40
+paper that um was called tree of thoughts so here it is uh so Princeton Google Deep Mind Etc so I unfortunately
+9:47
+don't have my notes on this but this is kind of like one of the main images that they've been using to to show it so normally if you ask Chad gbt a question
+9:54
+this is what that looks like you ask it a question it gives you an answer a while back opening AI put out a paper
+10:00
+showing how to get better results out of these AI language models which we now kind of just call Chain of Thought or
+10:07
+Chain of Thought prompting Co so we tell it to think through everything step by step right so we ask it a question we
+10:13
+tell it think through step by step like really reason everything out and so it Go step by step and then the output
+10:19
+oftentimes is much better because it took the time to do that then there's self-consistency with coot that that
+10:25
+doesn't matter right now and then there's tree of thoughts so this is where we think through the various sort
+10:31
+of branching chains of thought we think through each one and kind of gather data from that thought process and then come
+10:38
+back to the input to finally answer the question with all those sort of data that we thought through so this might be
+10:44
+a little bit confusing here's what really made it make sense for me so the AI model is given a couple random
+10:51
+sentences one is it isn't difficult to do a handstand if you just stand on your hands okay two is it caught him off
+10:57
+guard that space as in in the outer space it smelled of seared steak three when she didn't like a guy who was
+11:03
+trying to pick her up she started using sign language four each person who knows you has a different perception of who
+11:10
+you are so those are four random sentences if I asked you to write a coherent passage consisting of four
+11:16
+short paragraphs and the end sentence of each paragraph must be one of those four so in other words create a story where
+11:23
+each paragraph ends with one of those sentences think about that for a second I think most humans would have maybe a
+11:29
+little bit of a hard time I mean some people are more creative and verbally fluent than others but I I think a lot
+11:34
+of people would have a hard time cuz one is about space one is like a pun like it's difficult it's not difficult to do
+11:40
+a handstand if you just stand on your hands like was that a pun a joke one is
+11:45
+uh when she didn't like a guy who was trying to pick her up she started using sign language one is more like about different perception of who you are like
+11:51
+how do you combine them all into one you might have to sit down and think about it for a little bit so if I said give me an answer right now you might be
+11:57
+hardpressed to just spit it out and language models naturally like if you just prompt them and you just expect the
+12:03
+answer normally the output would be pretty bad the passages the story they make up connecting those it's not going
+12:09
+to really make any sense but if we give it something like this you know we ask
+12:14
+okay so identify the main topics the main themes how could they could be connected think about the different ways
+12:20
+that they could be connected right so we think through multiple different approaches kind of a brainstorming
+12:25
+session about the various ways that we can approach this and only then then with sort of that brain storming session
+12:31
+complete do we try to write the story and so in this case with these random sentences gb4 you know throws out
+12:38
+several different ways that it could possibly connect them in terms of like kind of what lens to view it from and then it thinks okay so one of the
+12:43
+choices that I thought of is Choice 2 it offers an interesting perspective by using the required end sentences to
+12:50
+present a self-help books content it connects the paragraphs with the same theme of self-improvement and embracing
+12:56
+challenges making for a coherent passage I'll link that video below if you want to see it but the point is it created a
+13:02
+coherent way to connect all those sentences if you read a book that it wrote you'd be like okay this this it made sense all right so that was
+13:08
+Microsoft research plus Princeton from a while back this is their brand new research saying we can create these
+13:14
+prompts that kind of simulate these tree of thoughts thinking to get GPT 4 to
+13:19
+produce a great response to these verbal problems so they get so they teach gb4
+13:25
+how to do that with that long prompt and then they ask it a series of questions where it solves it using this approach
+13:31
+and it does very well so then what they do is they collect a bunch of these something close to a million
+13:37
+87,000 training instances and so and then they take that data and they take this smaller model which is open sourced
+13:44
+this is the Orca 2 model and they train it on that data produced by gp4 but here's the trick here's the interesting
+13:50
+point they don't show Orca 2 this new smaller model this open source model
+13:55
+they don't show it this the system instructions so so they don't tell it the stepbystep way of doing it they just
+14:01
+show it the problem and the solution the problem and the solution and they do that 87,000 times and at the end of that
+14:07
+that smaller model is capable of solving that particular set of problems it's able to reason about those set of
+14:13
+problems as good as other models that are 5 to 10 times larger and the cost to create those little submodels as far as
+14:19
+you can tell I try to do the math on it I think it's like 4,000 or maybe up to 9,000 depending on what your kind of uh
+14:25
+where your costs are but it's not massive so what I think this is saying is that if you have access to GPT 4 you
+14:31
+can use that to create synthetic data large sets of synthetic data to train these inexpensive open source models to
+14:38
+do certain reasoning tasks certain specific reasoning tasks and they're able to do it very well so let's take a
+The Q* Hypothesis
+14:44
+look at Nathan Lambert's paper the Q hypothesis Trio thoughts reasoning so that's what we're talking about those ID
+14:49
+of thinking through multiple branching chains of thought or branches of thought and then figuring out how to like get
+14:55
+that data that we thought about and then answer the question the reasoning based on on that another way of think of it is when you're solving a crossword puzzle
+15:01
+like you know how you might think that something goes in a particular section So you you're like oh it's you know this
+15:07
+might be donut right but then you have to also line up with all the other answers that you have so you might think
+15:12
+through multiple different scenarios or playing Scrabble it's kind of the same approach you might have several
+15:17
+different potential words but you got to think through which one's going to give you the most point Etc so you can think of that as tree of thoughts reasoning
+15:24
+and humans do that naturally and it seems like these AI models if we teach them to do that their results are
+15:30
+improved because of it all right so he starts how Reuters reported on qar which
+15:35
+we went over uh in our last video and so he's saying qar if real again keep in
+15:40
+mind that a lot of this is speculation clearly links the two core themes from reinforcement learning literature Q
+15:47
+values and a star a classic Graph Search algorithm so we briefly looked at this I
+15:52
+hope this is pronounced this is pronounced a star I assume I actually just realized I've never heard it spoken just I read about it it but I'm get I'm
+15:59
+going I'm going to keep saying a star so AAR a classic Graph Search algorithm so if you think about a problem where
+16:04
+you're trying to get from one place to another a star is that the ability to just move from one place to another that's how NPCs in various video games
+16:12
+might get around and then Q values that's what we talked about with sort of trying to figure out which of our
+16:17
+actions produce the greatest rewards and that's how these AI agents learn to interact with a new environment they
+16:23
+keep trying different stuff seeing what works what doesn't Etc and over time so that qar that's kind of like when they
+16:29
+figure out the best possible approach to get the most reward so kind of like in chess what is the best possible move
+16:36
+right so yes there's an argument that Q could be just refer to the value function of the optimal policy so it's
+16:41
+like the best chess move but that would be silly so he's saying it's much more likely that it's some sort of a link
+16:47
+between Q values and a star which is what a lot of people have been saying and so he's saying my initial hypothesis
+16:53
+which I clearly labeled as a tin hat theory was a vague merging of q-learning and AAR search so again that's kind of
+16:59
+like what a lot of people's thoughts are right now about what this is as I've dug into this in more detail I've become
+17:05
+convinced that they are doing something powerful by searching over language SL reasoning steps via tree of thoughts
+17:11
+reasoning in a much smaller of a leap than people believe the reason for the hyperbole is the goal of linking large
+17:17
+language model training and usage to the core components of deep reinforcement learning that enable success like Alpha
+17:24
+go self-play and look ahead planning so Alpha go that's out of Google Deep Mind
+17:29
+and we've seen some incredible things coming out of Google Deep Mind including Alpha fold which is learning how to how
+17:36
+proteins fold the 3D Shape of it which was very difficult for us to do before AI kind of was able to figure out the 3D
+17:43
+structures of these proteins that was a massive breakthrough in 2020 that will open a lot of doors for drug Discovery
+17:50
+for for fixing certain very like rare diseases and eventually maybe not so rare maybe most diseases so it's a very
+17:57
+exciting Avenue and then also they had Alpha go which beat the greatest player in the world at the game of Go and then
+18:05
+there was also we did a video where Google deep mind they figured out how to optimize certain certain code to make it
+18:11
+much more effective and what's really interesting about all of them what I think kind of links all those together
+18:16
+is that they kind of build the way this AI approaches problem kind of like a game so if you think about Google deep
+18:22
+Minds AI playing Starcraft and playing go and playing chess but also solving
+18:27
+these very complex biological problems and also optimizing code you might think that the process is very different but
+18:34
+as demasab himself is saying who he's the founder of Google deep Minds as he is saying they use the idea of games for
+18:41
+a lot of this it's a great concept because the AI starts playing out a game so for example when they were optimizing
+18:47
+code it would write a the first line of code and the second line of code each one would be thought of as like a move in chess for example and they would get
+18:54
+certain points like if it was able to optimize the code in a shorter number number of lines it would win the game
+19:00
+right so they they they take that idea of games and they make this AI play games with you know a high score or
+19:07
+whatever but they just apply to these complicated problems and it works now keep that in mind because as you'll see
+19:13
+in just a second and the spoiler alert Demis Habi so again the the main guy at
+19:18
+Google Deep Mind said a while back that Deep Mind Gemini so that's their new big model that's was supposed to be here now
+19:24
+but they're pushing it back into 2024 it will use alphao style algorithm Ms to
+19:29
+boost reasoning even if Q star is not what we think Google will certainly catch up with their own so we'll come
+19:34
+back to that but that's that's that's an important thing to to think about is that these different AI Labs the best AI
+19:41
+labs in the world you know they're very secretive and they they're not really sharing information with one another but
+19:46
+it seems like so when they're saying when Demis hobas is going this seems to be the way to go and then opening eyes
+19:53
+like also saying the same thing that probably means something cuz they're both seeing the same thing they're both
+19:58
+kind of kind of going the same direction so let's go back to to this here so self-play is the idea that an agent can
+20:03
+improve its gameplay by playing against slightly different versions of itself because they'll progressively encounter
+20:09
+more challenging situations in the space of llms it is almost certain that the largest portion of self-play will look
+20:14
+like AI feedback rather than competitive processing so way back in the day when we were just beginning to teach AI how
+20:20
+to play chess we would give it human games like here's how humans play this game and then we would tell it how much
+20:26
+each piece is worth so we would say you know the pawn is worth one point the Knight is worth three points Bishop is worth three points Etc and you know it
+20:33
+did okay the that AI did okay but this new wave of AI we don't started by
+20:39
+telling it what we the humans have figured out we we we tell it you know play against itself and and figure out
+20:45
+how to do it and that AI just beats humans by a large margin like it's it's
+20:50
+much better than humans at playing chess so it's almost like us telling it what we figured out beforehand is like almost
+20:57
+like it it's worse for it it's almost better off just figuring out on its own have you ever seen that in the workplace
+21:03
+when you know somebody is taking over a project that's maybe not going so well and the people that have been our project are like well do you want us to
+21:09
+tell you what we've figured out so far what our thoughts are and right the new team that's taking over is like no like
+21:14
+not interested we'll we'll figure out ourselves that's kind of like a disc right that's not a nice thing to do but in this case AI is better if it learns
+21:21
+on its own from itself and what's interesting here is that over time it actually came up with different values
+21:27
+for the chess pieces than what humans have thought of you know in the whole history of US playing chess so we
+21:33
+thought that the pawn is worth one point and so I mean says you know this is uh piece values according to Alpha zero so
+21:39
+it starts with one I mean that's probably just the Baseline so one to one it that doesn't matter that's just the what we're setting the base at and then
+21:46
+we thought that the Knight is worth three points it's setting at 3.05 so you see how how accurate is like no not
+21:52
+three you know it's much more accurate than that right and then the bishop is three points it thinks the bishop is
+21:57
+3.33 three The Rook is 5.63 whereas we thought it was five and the queen is
+22:02
+worth it thinks the queen is worth 9.5 right and you might say well who's right who's wrong since it beats easily any
+22:10
+Grandmaster chess any human Grandmaster I would say it you know I would assume these are accurate it's much more
+22:16
+accurate than humans are all right so selfplay again so it's the idea that AI plays against itself with slightly different versions of itself because it
+22:23
+will progressively encounter more challenging situation so in the space of LMS it's almost certain that the larg portion of self-play will look like AI
+22:29
+feedback rather than competitive processes and look ahead planning is the idea of using a model of the world to
+22:35
+reason into the future and produce better actions or outputs so this is interesting so I guess they use Dolly 3
+22:41
+to create this visualization of uh tree of thoughts that's pretty cool all right
+22:47
+now we're talking about tree of thoughts prompting techniques like take a deep breath and think step by step are now expanding into advanced methods for
+22:54
+inference with parallel computations and tics this will make more sense in just a second so tree of thoughts and he kind
+23:00
+of goes over what tree of thoughts is we went over that a little bit and so he's saying that tree of thoughts seems like the first recursive prompting technique
+23:07
+for improving inference performance meaning that it kind of Builds on itself Builds on its own thoughts so thinks
+23:13
+through a brainstorms and then it takes that and thinks more through it and then more Etc so it's kind of building upon
+23:18
+its own thoughts and so next here he's talking about prms process reward models
+23:24
+and the core idea of this is to assign a score to each step of reasoning rather than the complete message so if you
+23:29
+think back to taking various math exams back in school you know sometimes you just get the points for the correct
+23:36
+answer but I feel like more often than not they grade your you showing your work right so maybe you get a few points
+23:42
+for stating the problem correctly a few points for working it out a few points for making sure all your calculations
+23:49
+are right and then a few points for finally you know having the right answer in the right format whatever so
+23:54
+basically you get graded based on not just the correct answer but also your work that's what a process reward models
+24:00
+could be thought of and so in AI paper called let's verify step by step so here we have a math problem so as you can see
+24:07
+here so two solutions of the same problem graded by PRM process reward models and so the solution left is
+24:13
+correct while the solution on the right is incorrect and so the green backgrounds indicate a high PRM score
+24:18
+meaning it's right a red background indicates a low PRM score and so next he's saying the prompting from a tree of
+24:24
+thoughts gives diversity to the generations which policy can learn to exploit with access to APR Ram so as I'm
+24:31
+understanding this in this this kind of diagram of the tree of thoughts right so we tend to grade it based on the output
+24:37
+so you know if it gets the output right we're like Yay plus 10 good job and if it gets the output wrong we're like boom
+24:43
+minus 10 bad but what if the model could go through each step each thought each one of those little each one of these
+24:49
+little substeps and grade it like this was bad so it's minus one but this was good so it's + one and this was
+24:55
+excellent so it's plus two right so it's it's it's learning which reasoning steps lead to the greatest possible output and
+25:02
+looks like he's got a asum this is a uh a podcast of the retort oh you are finished well allow me to retort all
+25:09
+right next we have putting it together what qar could be and so what he saying is that qar seems to be using process
+25:15
+reward models to score tree of thoughts reasoning data and then optimized with
+25:21
+offline reinforcement learning so we we know that open ey is already using kind of offline reinforcement learning so
+25:27
+basically you know they train the model and then this base model comes out which most people are not going to use it's a
+25:33
+text completion model it's it's powerful right in in in many ways it's more powerful than the chat version of it the
+25:40
+instruction tune model but then we use reinforcement learning of human feedback to kind of tune it to the way we want it
+25:46
+right and it comes out going hi I'm your helpful assistant and that's what Chad GPT is that's what everybody's using that's the kind of back and forth
+25:52
+conversation that we have with it Etc but it sounds like what he's talking about is something like this so as the
+25:57
+AI is thinking through all the various different steps each little thought each little output is getting created on its
+26:04
+own by AI so it's it's saying okay this is this is a good idea this is not so
+26:09
+good and over time as you're going through these thoughts this is what that idea of approaching qar the best
+26:15
+possible reward that's what that that's where that comes in so over time it figures out how to best reason about how
+26:23
+to get to wherever it's going what is the best way of thinking to come to the right conclusion and as I'm saying that
+26:30
+I gotta say that seems one that seems pretty brilliant number two it seems it just kind of feels right I don't know
+26:36
+and the last step is where the rumored vast Computing resources use AI to label every step with a score instead of
+26:42
+humans synthetic data is king So that's what we were talking about with Orca 2 where GPT 4 generates the data needed
+26:48
+for the training and with trees rather than single with path so via Chain of Thought giving more and more options
+26:54
+later on to arrive at the right answer so I hope that makes sense I'm not sure I got to once I replay it sometimes when
+27:01
+I record a video and I replay it I'm like oh my God that didn't make any sense so maybe I'll have to go back and
+27:06
+add some more tldr here but like I've said before a lot of this qar stuff is aligning with all the other research
+27:12
+that's coming around using multiple models to do different things some for output some for checking that output and
+27:19
+then also kind of analyzing all the outputs and all the you know the grading of the outputs kind of putting it
+27:24
+together trying to kind of synthesize that into some new information to gather like some new insights it seems that
+27:30
+stacking these AI layers on one another that seems like the way to go and obviously the vast Computing resources
+27:38
+is what will be required for that the ton of Computer Resources tracks with the rumor that I've heard one or more of
+27:43
+the big Tech players Google anthropic coh here Etc are creating pre-train sized data set from process supervision
+27:50
+or RL aif so that's we haven't talked about this before but so R lhf is
+27:56
+reinforcement learning of human feedback right where the human sitting there is like good job no that's bad so this is
+28:02
+just we take out the H we take out the human and we stick in the AI so it's reinforcement learning with AI feedback
+28:09
+so now the AI is sitting there and going good job no that's bad Etc but it's doing that really fast right a million
+28:15
+times a second whatever so it's faster it's better uh and much more scalable than having humans do that could could
+28:21
+ever possibly be the Gap to openly available models in this area worries me so I think if I understand correctly
+28:27
+what he's saying is that that would require you know massive amounts of Hardware of Nvidia chips of you know
+28:33
+thousands of hours of gpus which may not be available for open source models meaning that the big companies will win
+28:40
+and will likely have kind of a foothold on on AI maybe that's the mo that they've been looking for so back to Dr
+Dr Jim Fan
+28:47
+Jim fan so he as I understand at least talks about some of the so the ideas are
+28:52
+similar he approaches it from a slightly different perspective but I think that they're both talking about about the
+28:58
+concepts are very similar and so here he's saying so Alpha go does selfplay so it's playing against its own older
+29:03
+checkpoints so for any move as it's playing against itself it's also playing against all the previous moves the
+29:09
+various different versions of itself that can that play as the opponent and as selfplay continues this is saying
+29:15
+that both its ability to make good moves and its ability to understand the board
+29:20
+and who is more likely to win both of those are improved iteratively as the policy gets better at selecting moves
+29:26
+there's more data to learn from and it provides better feedback to the policy to the AI so that completes an ingenious
+29:33
+perpetual motion machine by the way I mean this is this is when people talk about AI safety when they talk about the
+29:39
+various threats that AI poses I mean this is where I think most people need to understand this is where it gets a
+29:45
+little bit scary this perpetual motion machine but because the motion in this case is the AI getting smarter so it's
+29:52
+perpetually getting smarter getting smarter and better at getting smarter doing that recursively and doing that
+29:59
+you know faster and faster so this is wait but why a Blog by Tim Urban so this is from 2015 the beginning of 2015 so he
+Wait But Why by Tim Urban
+30:07
+was talking about some of this stuff long before um you know it was on a lot of people's radar and so one of the
+30:12
+things that I really like how he described is we think of AI as you know for most of human history we wouldn't
+30:19
+say it was anywhere near as smart as humans right it couldn't do anything that humans could do and people talked about one day AI sort of becoming as
+30:26
+smart as humans and one we phrase it that way you would think that you know if you were thinking of this AI
+30:31
+intelligence as a train you know we kind of think of it as like this is the human level intelligence station so this is
+30:37
+you know here's AI arriving at human level intelligence and we think that you know we we think that it would like
+30:43
+slowly pull into the train station and we'd say oh hi you're now as smart as we
+30:49
+are right but the reality is you know here's a guy going it's coming fast right it goes zoom and it's gone like AI
+30:55
+intelligence it's not going to stick around at our intelligence level for a long time if it's you know a perpetual
+31:01
+motion machine that's ever improving itself you know it'll be as smart as for a split second and then it will be much
+31:07
+smarter and it's going to continue and so this is a great chart of like the intelligent staircase right you got the
+31:12
+insects here then you get something like a like a chicken here's a chimp and This Is Us humans right and then there's this
+31:18
+like continuing staircase where there's nothing here as far as we know right but then you know this is the biological
+31:23
+range this is what all of intelligence as we know it in biology is and then
+31:28
+this is what artificial super intelligence might look like and so here Dr jiman is saying an AI can never
+Dr Jim Fan cont.
+31:34
+become superum just by imitating human data alone so that's what kind of alphao and all those showed and this is what I
+31:40
+was talking about in my previous video where we're now kind of walking through the door of AI training the next
+31:48
+evolution of AIS like we're not quite there yet but we're like walking through that door like now it's creating data to
+31:54
+train itself and there's more and more stuff that's coming out it's showing that moving forward our abilities human
+32:00
+abilities to train robots and AI it's like we're bad at that and that AI is
+32:06
+going to be much better at that and that's one of the things that Dr Jim's fans his Eureka paper was showing is
+32:12
+that you know humans have tried for a long time to figure out how to get a robot hand to twirl a pencil like you know how some kids are able to like
+32:18
+twirl a pen or a pencil in their hands that was extremely difficult but for GPT 4 it was fairly easy they were able to
+32:24
+get it to do that by having the GPT 4 rate the reward process you can think of it as like the code for how to do that
+32:32
+and so what it showed is that as our abilities to do those complicated things declines right we're as good as GPT 4
+32:38
+for like the easy tasks like there's not too much of a difference but as it gets more complex like human ability to do
+32:44
+that stuff just Falls right whereas the ai's abilities it gets better and it gets better in ways that we can't even
+32:50
+we would not have thought of similar to how alpha go beat uh Leisa do like there was this one move that it made where
+32:57
+where you see everybody going uh the AI made a mistake that's a bad move why would it do that but then you realize
+33:03
+that that was like the pivotal move in the game that was extremely strong and we the humans didn't figure out till the end of the game like oh wait that was a
+33:09
+good move so it makes these novel moves these new moves that we don't we don't think of but GPT 4 when creating reward
+33:17
+functions for robot hands and for how to optimize software and stuff like that it creates new novel moves that are
+33:24
+different from how humans think you know and so here he's translating That Into You know qar so you would have the
+33:31
+opening eyes most powerful internal GPT responsible for actually implementing the thought traces that solve a math
+33:37
+problem for example and then you have another GPT that scores How likely each intermediate reasoning step is correct
+33:43
+and then he he breaks down the prms the process supervised reward models or the orm's outcome supervised reward models
+33:52
+so that's what we talked about instead of grading the final output The Final Answer we're grading you know to show
+33:57
+your work part what are the thinking steps what are the reasoning steps that led to that answer and so the outcome so
+34:03
+just gting the answer that's sparse reward so you just get these rewards these Corrections every once in a while
+34:09
+whereas prm's process supervised reward models that's dense reward so you're getting fast feedback throughout the
+34:16
+whole process like oh you're you know you're getting colder you're getting warmer you're constantly being guided in the right direction and again I'll link
+34:22
+the links if you want to read through the entire thing this is fascinating but I don't want to get too deep to everything and I do want people to check
+34:29
+out the blog check out Dr Jim fan Twitter X profile and give him a follow I think he's a he's he's a great follow
+34:36
+and so he concludes with you know just like Alpha go just how it has different parts of itself that improve each other
+34:43
+iteratively as well as learn from Human expert annotations whenever available so a better policy for llms for large
+34:49
+language models will help the tree of thought search explore better strategies which in turn collects better data for
+34:55
+the next round and so Demis hasab said a while back that Deep Mind Gemini will use Alpha go style algorithms to boost
+35:01
+reasoning even if qar is not what we think Google will certainly catch up with their own if I can think of the
+35:07
+above they surely can and he's saying that the above is mainly about reasoning so it's not necessarily that creativity
+35:14
+that synthetic data will be better for creativity but for reasoning it might be a lot better I got to say at the end of
+35:20
+the day what really just makes sense to me is this idea of alpha go plus llm so Alpha go and also Alpha fold and and I
+35:27
+forget all the names I think all the names are alpha something whatever Deep Mind releases they seem to be building
+35:33
+it around that same idea of this idea of self-play of trying different stuff improving on itself kind of making it a
+35:40
+little bit more into a game with a reward a high score Etc and it's always trying to beat its own high score it's
+35:47
+running through many different games per second millions of games per second or whatever whatever that rate is and each
+35:52
+one it gets more of an understanding about how to approach the problem more effectively and then there's this whole
+35:57
+other branch of how we approach Ai and that's llms it's something completely separate and both are extremely powerful
+36:05
+in their own ways and each has certain weaknesses that the other one seems to
+36:10
+be good at so combining the two seems like it would be a great idea and maybe at the end of the day maybe that's what
+36:16
+qar is it's taking the amazing stuff that Google Deep Mind produced the the
+36:22
+mindblowing stuff that they've accomplished and it's also taking the mind-blowing stuff that open ey produced
+36:28
+and merging them together could that be the big breakthrough that scared the
+36:33
+crap out of everybody that made some people want to you know delete open AI or at least try to kind of it
+36:39
+and merge it with somebody else to try to prevent this stuff from rapidly getting out there and to top it off
+Jimmy Apples
+36:45
+here's uh Jimmy Apple so he's the one that's been leaking a lot of information from open the ey it seems like he has
+36:51
+some insided data that he's sharing with the world through his Anonymous account and the more and more time goes on it it
+36:58
+does seem like it's it's getting pretty obvious at this point that he does have access to some internal data he tends to
+37:04
+say things weeks before they happen so I kind of tend to look to what he's saying
+37:09
+even though he's like very cryptic about it but it does kind of give you a taste of what's to come and here he reposted
+37:15
+somebody saying one simple way that opening ey is looking to acquire superhuman data is to have models be
+37:20
+evaluated with human plus AI instead of pure human annotators which is again similar to what we've just been talking
+37:26
+about theoretically this scales linearly with AI progress rather than being upper Bound by human skills yep here's the
+37:33
+slides from Jan Ley co-lead of super alignment team at open AI from his talks at computer science 25 at Stanford AI
+37:40
+Lab video talk and he links an hourlong video from Stanford this is going to be
+37:46
+interesting to watch the sound quality is horrible well I got some reading to
+37:51
+do and I will report back on what I find I hope this was useful last and final reminder that a lot of this is
+37:58
+speculation we don't yet know what's happening so if next week all this turns out to be fake news please don't be mad
+38:04
+I never said any of this was real but it does seem like it's aligned with a lot of the research that we're seeing that's
+38:10
+what makes it so interesting anyways if you made it this far you're a troop birth thank you make sure you subscribe
+38:16
+we got a lot more stuff coming my name is West rth and thank you for watching

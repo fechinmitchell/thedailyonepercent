@@ -1,0 +1,1383 @@
+alrighty folks hopefully everybody can hear me and hopefully I'm here and I literally just ate a sesame seed Bagel
+0:09
+so nice way to start because I got a sesame seed in my throat so anyway hi folks hey y'all it's Dr know it all I'm
+0:15
+here with Scott Walter uh greetings to everybody who is watching live and we are going to try to track oh okay oh wow
+0:24
+I'm getting total um hold on a sec I think I'm getting repeat here so
+0:31
+um hold on some feedback well I was I think it's playing someplace in the
+0:37
+background sorry about that folks I am a I am a noob with uh with uh
+0:42
+streamyard and somewhere I had I was doing some setup for this and I think I had left it open and so I was getting I
+0:48
+had that happen one time too in streamyard and that also accidentally had the YouTube running at the same time
+0:53
+and didn't understand why I was hearing voices yeah it was I was like oh that's a good way to go insane because I'm
+1:00
+anyway I apologize ahead of time because I'm a complete Noob with streamyard uh I've always just been on other people's
+1:06
+channels so I'm trying it today we're gonna do a live stream today Scott and I are going to talk about we we're gonna
+1:11
+talk about qstar we're gonna talk about why Tesla might be really looking at this right now if they haven't already
+1:17
+we're going to talk about why we're terrified and we're going to first though give a sort of buildup and talk about AAR 1968 by the way I checked on
+1:24
+that we're going to talk about AAR uh Q learning deep Q networks and then qar and how they all stack on top of each
+1:31
+other and then why open AI may have made a major breakthrough with this and I'm
+1:36
+going to uh I'm going to sort of turn off the comments for now um I I'll I'll read them back again but it's just to
+1:42
+keep me from being confused because I don't have a producer like far farza does he has producer wife who helps him
+1:48
+out and I don't so anyway if people want to flag good comments I will look at that oh we also have to look at um
+1:54
+encryption which could be a major reason why open AI decided to table the uh idea and make it quiet so yeah we have a lot
+2:01
+to talk about I'm going to let Scott go first because uh you should talk about
+2:06
+um AAR and you'll be able to present yes so you start with AAR I'll go on from there okay we're gonna build on that so
+2:14
+when when I first heard qar I mean the first thing came to my mind is like oh that's like reminds
+2:19
+me and certainly some of the papers and discussions have been talking about the two together so it wasn't just that oh
+2:26
+it sounds the same it seems like there is some relationship and we're not quite sure what the relationship is I think
+2:31
+there's a couple one is AAR is a really good analog to understand what qar is trying to do could be completely
+2:37
+separate algorithm or something like that the other thing is that qar or some
+2:43
+form of neural net may be used to enhance the AAR algorithm and hence they may have then called it qar that's one
+2:50
+possibility okay and the other is that it's neither or it's kind of both
+2:56
+together so the first thing is to get everyone some sort of background grounding on what the AAR algorithm is
+3:02
+what the history of it is and actually part of the history of the AAR algorithm is the very first video you and I did
+3:08
+together was we talked about AAR okay and AAR is something that uh we all use
+3:15
+in our daily lives if you ever use some sort of Route Planner or something like that so wait did we actually what was
+3:21
+that first video now I'm I'm I'm yeah yeah we the very first video we did we talked about the AAR algorithm because
+3:28
+it's it's used as a route planner it's used not just for people to be able to figure out how to drive from one city to another it's also used by mobile robots
+3:34
+and everything to be able to negotiate any sort of environment and the AL the origins of the algorthm go way back they
+3:41
+actually go back to the 50s in dystra where he came up with the first way of being able to solve the problem of being
+3:47
+able to Traverse a graph to get from one node to another and don't worry we're going to explain what all that means in a second and then in 1968 it was kind of
+3:54
+enhanced and then it was instead of being called the dyer algorithm it was called the AAR algorithm I'm going to
+3:59
+show this because I think this is a really this is on wikip got a better one to show I've got a better show here well
+4:04
+I was just showing because I I always talk about people going from place to place this is actually railroads but but
+4:09
+anyway okay so I'll I'll stop but it's the idea of doing a search and finding the correct um you know way to go for it
+4:16
+yeah I'll stop sharing but I thought that was a really cool uh little graphic so okay yeah go for so what I'm what I'm
+4:22
+gonna do is right here I'm gonna go ahead and share our screen here and then just make us go away for a second so um
+4:29
+when was growing up uh we had like don't see your uh still you should see it um
+4:35
+oh you should see something now you see oh I gotta add I gotta add you sorry see I told you I was a noob okay so I just
+4:42
+added it there you go okay okay so you see this right so if if you've you know when
+4:49
+I was growing up as a kid we had you know the atlas of the road the the ren MCN atlas of of the United States and
+4:55
+everything and in there was like this section here which was showing the distances between all the major cities
+5:01
+in the US okay this is essentially what the AAR algorithm is attempting to solve
+5:07
+is a problem if you ask a question is how long is it going to you know what's the shortest distance from New York to
+5:13
+to Los Angeles it has to go through this network to be able to figure it out now every single City on here is what you
+5:19
+would call a node and every single line connecting the cities is just called an edge and it's kind of abstract and in
+5:27
+there ahead of time we already know what the is between each of these cities through that connection so this is
+5:33
+basically a priority knowledge and you can put any information you want in there you can put distance you can put
+5:38
+time you could put cost anything like that and the idea is to find the route that goes from one node to some other
+5:45
+node which is has the lowest cost function in other words the shortest distance or the shortest time to get there and and let's dwell on that for
+5:53
+one second cost function is there's there's two parts to the AAR algorithm one is the transition cost which is is
+6:00
+basically you could consider it time or gas or something like that but basically how much does it cost from you to go
+6:05
+from this block to this block but the other one is the estimated cost to get
+6:11
+to your goal so if you're in New York what is the estimated cost to get to Los Angeles and that's where interesting
+6:18
+stuff happens so yeah okay right right so what you want to do is if you kind of look at it and if you were to explain
+6:23
+this to someone and show them this network and say okay I want to go from one random City to some other random
+6:28
+City how difficult would that be and you would start to think about it and how you'd write an algorithm and you would come to the conclusion man that that's
+6:34
+just going to be a lot of I have to try every possible combination and a lot of people would say well wait a minute this
+6:40
+sounds a lot like the traveling salesman problem now the traveling salesman problem is actually a very easy algorithm to write unfortunately its
+6:47
+runtime is like longer than the age of the universe it it is so it's so hard to do because you have to look at every
+6:53
+combination so people it's longer to be specific it's longer than the age of the universe with the it's much longer it's
+6:59
+it's you have to you have to specify though with 100 cities because if you have two cities do the traveling sales problem
+7:06
+you can do yeah you can do it with like a handful but once you get to 100 it's like 10 to the
+7:12
+35 iterations it just becomes ridiculous and then we have more than a 100 cities in the US so the traveling salesman
+7:18
+problem is very difficult and so a lot of people when they looked at they said oh this must be really really hard but it turns out there's some clever
+7:24
+insights you can do in this kind of algorithm so the first thing you to remember is you have to come up with the database that represents this so you
+7:30
+have a couple of tables a table of cities and then each city has like the cities that it's connected to and what
+7:36
+the cost function is there and you try to descend this whole thing by going from one layer to another to another so
+7:43
+the first thing you would do if you want to go from New York to LA is you would explore all the connections you have and
+7:48
+you might start and say I'm going to head up towards um well kind of in the Boston direction we're going to go
+7:53
+probably through Hartford or something like that so you go off in that direction and then you go up to Bangor and then you know you're basically
+7:59
+getting yourself kind of lost you're taking the really long way to get all the way over to Los Angeles okay and you
+8:04
+can explore others and usually what it does is it it looks at the first layer looks at those and then keeps on going
+8:09
+down and and tries to progressively march on out there and so the way I've described it it seems like man this just
+8:14
+so many combinations we are going to be going all over the place it's going to take forever to find that route but
+8:20
+there are some little tricks you can do first is you're not allowed to back up on a route you've already gone down once you've gone down an edge you cannot go
+8:26
+back up it you just go in One Direction other no Loops are allowed okay so you don't go like New York to um to
+8:34
+Harrisburg to Pennsylvania to Philadelphia you know back up to New York again so you're not going to go in
+8:39
+circles you're G to try to get some sort of directed route but what ends up happening is that if eventually you get
+8:44
+there to to that destination that cost function now becomes the champion and
+8:51
+everyone else that you're trying to do has to be has to attempt to beat it and if it already is longer to take the
+8:57
+route that goes over Boston and Montreal in Seattle than it does let's say the one that goes through Kansas City then
+9:03
+you're you're not going to look down that anymore you're going to say no no point doing that it's it's not necessary
+9:09
+and so that's one of the things that allows the algorithm to actually run reasonably well now the the runtime order of it is something it's like order
+9:16
+B to the the the power of D which is maybe a bit too much to kind of explain the idea of of runtime order of an
+9:23
+algorithm is how complex it grows how how the time grows with complex
+9:30
+so if you have something that can characterize it's got n elements in it and if you double those n elements the
+9:35
+question is does the runtime algorithm go linearly in other words it order n or is it something like order N squared in
+9:41
+other words if you double the amount the complexity of the problem does it then take four times as long that would be an
+9:48
+N squ kind of thing and it's better than n squ let's just say that it's it's not as bad as n squ depending how you
+9:54
+measure it and it's fairly quick which is why we can actually put in Destin ations in our cars and that fairly
+10:01
+quickly finds what should be the most efficient route there and there's a lot of other things you do now the one thing
+10:07
+about any sort of AI or database I think to put this just to put this in context
+10:13
+the the the sort of dumb way of doing this which was what existed before dyra and AAR is just to explore every
+10:20
+possibility so if you possib nodes in the United States you just try every single one that's why it's insane so AAR
+10:28
+the the big Advance with AAR is that heuristic which is the estimated cost to get to LA from New York or or anywhere
+10:36
+if you're in Pittsburgh at the moment like how long does it so anyway and then what you can do is you can start pruning that search tree because you're like
+10:42
+well clearly I just went from New York to Boston so it's GNA be longer and I'm just gonna throw away that that branch
+10:48
+of the tree and not explore all that other stuff right right now now the other thing is that in in the early days
+10:53
+the database basically was a a list of the cities and a list of the edges and the cost to go there let's say it didn't
+10:59
+really have an overview it didn't really know the the XYZ or the the longitude latitude of New York in in Pittsburgh or
+11:06
+if we wanted to go to Indianapolis or anything like that so um that meant you may not had any sort of overview or
+11:12
+information of what's going on that could give you a a quick estimate of what do you think is going to be the
+11:18
+best cost function so we as humans the the solution is that you took out a
+11:23
+ruler from New York if you want to go to Indianapolis and you put it along there and you said well it's the route's going to be as close as we can get to that
+11:29
+straight edge as we can and that makes sure you don't start going off to Buffalo or Montreal or in strange
+11:34
+directions or even started heading south and that's because we can kind of see that um and you know one way you can
+11:41
+then do that is that if you know the distances let's say you know the XY z locations of these you can do a
+11:46
+cartisian distance and then from them say ah I I know it's uh I know you know 700 or something miles as the crow flies
+11:54
+from New York to Indianapolis so it shouldn't be more than 50% of that let's
+11:59
+say so as soon as you start going down these spous routes you throw them out and now what could then happen is that
+12:05
+you know remember this AAR is all heuristics it's all an algorithm what if you start to train your this kind of
+12:14
+network into an AI so now it has kind of that overview like we have because
+12:20
+because I I don't have to show you this map or anything like that you've got a good enough sense intuitively that I say
+12:26
+hey John what's the best way to go from New York to LA and you'd probably say oh through Kansas City not through Chicago
+12:32
+certainly yeah if you gave me the choice of like Montreal or something versus that yeah yeah yeah you would say oh I I would you know it's it's well it's
+12:38
+either Kansas City or Oklahoma you know there might be one of those those two routes that that you would know so you intuitively you know that and that's the
+12:44
+way you're going to guide it and go very quickly so you could imagine if you do a mashup between AAR and some sort of
+12:51
+neural network the neural network might give you that better guess because I have tried to write so many algorithms
+12:56
+where I look at the problem and by looking at at the problem I can see what the answer is but I cannot figure out how to turn into algorithmic form
+13:03
+because we see the whole problem whereas once you get it into computer it doesn't get the overview and be able to see it
+13:09
+however we I I believe that large language models are able to get an idea
+13:14
+of spatial awareness now even though they've never seen a map or been told where anything is just by learning
+13:20
+enough about the cities they have a rough idea of the relationship of Paris to Frankfurt right or you know London to
+13:26
+Paris or or Stockholm to OS or you know London to New York it has an idea and so
+13:33
+you could potentially recreate this network because this is not what AAR sees AAR sees nodes and seems the links
+13:40
+it doesn't know that Boston is northeast of New York it doesn't know Buffalo is
+13:46
+west of New York it doesn't have that information but if you kind of bring that in as some additional information
+13:52
+then you can start pruning these trees really quickly and BR very close so the analogy that I used yesterday is that
+13:58
+this is very much the way chess works or go is that you're in a certain situation and you have a certain number of moves
+14:04
+you can do and you simulate all those moves in your head to see what looks good and then you've got to look at that
+14:09
+move that you're thinking of doing and looking at the move after that and then looking at all those counter moves now
+14:15
+if you have to do that every time you're going to be very slow on the chessboard the grand Masters they already know which moves are good in this situation
+14:22
+and which ones are not which is why they're able to kind of guide their ways through so that is pop this one back up
+14:29
+here yeah because I think this is valuable now to look at because you can see what the algorithm's doing if this
+14:35
+was a dumb algorithm it would be going in every direction and exploring every possibility but it's doing an explore
+14:41
+exploit kind of uh trade-off and it's exploring a route and going is this shorter to La than the other route was
+14:48
+no okay well then prune it so it does it explores for a while there's a frontier that's what the edge of this red sort of
+14:54
+area is is like a frontier area and and it it's looking at that Frontier and
+14:59
+it's exploring the frontier and then once it's like oh yeah these are pretty good options then it puts those into its
+15:04
+list of possibilities and see you can see it's it's not perfect but it's way better than going it knows the head West
+15:10
+he knows it's not going Northeast it's not heading up to Boston it's not heading up to Montreal or anything like that it's not heading down to Florida
+15:17
+it's it's knowing that it's kind of this way it's almost like a lightning bolt you know it's kind of trying to feel the
+15:23
+way and then once it gets it it knows that's the route so if you are lucky and you get a good you know you find a a
+15:30
+route pretty quickly to La you were then able to say wait a minute try to beat this and then you can very quickly
+15:37
+start uh pruning the tree to make sure you are not going down all these culde saacs that you don't want to go down to
+15:43
+but as we can see it's still kind of exhaustive and there are all sorts of tricks that they do like for instance
+15:50
+you just don't do all the surface roads you really look at just the interstate highways and you look at like some major
+15:56
+roads there's all sorts of these different tricks that you can do try to improve it but still AAR takes a little
+16:02
+bit of a while to do the searching even though it's much better than a full exhaust search so right the way AAR is
+16:09
+kind of formulated is that you would say that you're calling some function and you know it's called a or a star and it
+16:16
+has two parameters one is your start location and your destination and you want it to return the route and one of
+16:22
+things of course you can do is when the route is returned you can cash it for future use so you don't go through it
+16:28
+again because it may be there but in many cases it's going in there as if it's never seen this map ever before you
+16:35
+know oh I've got some database loaded in here I run the algorithm I have to come up with the answer and you get that so
+16:41
+you have a starting and then a destination and the a star is the idea is that you're coming up with the optimum the best route don't just get me
+16:47
+any route but actually get me the best route provable best route now right hustar I think is attempting to do the
+16:54
+same thing but it's using rather than start and destination it's using State
+17:01
+and actions right well except I mean AAR AAR uses State I mean it's just St is
+17:07
+sort of rolled into it because where state is like where you currently are is your current location right whereas if
+17:13
+you abstract it for the qar state can mean anything it's it's whatever the state of the machine is and then there's
+17:18
+these actions that you can do and the actions are going to result in some sort of activity and the question is defining
+17:25
+an output or a result of your actions that are going to be optimal and again I
+17:31
+like using the example of um of Doctor Strange you know is like that that one
+17:37
+scene in The Avengers where he's sitting there and he's simulating all the possibilities trying to find the best
+17:43
+one you see he's got to go through like I think it was like four million and something different scenarios of what
+17:49
+they have to do and there's like only one that works right so Q is trying to
+17:54
+do the same thing looking at all right I'm right here what's the best result that I'm going to get and how quickly
+18:01
+can we do it and I think that's key it does it really fast right and this is where I have I had chat GPT helped me
+18:07
+and I would have had grock helped me except I still don't have access to grock hint hint to the xai team but
+18:12
+anyway it's appropriate because it actually should be uh chat GPT um helping me out with this but I mean I I
+18:17
+knew this but I didn't have a good way of putting it and this I thought was a really good explanation and I I go on down here so it did a terrible graph but
+18:24
+anyway or a picture so anyway Q learning deep Q learning are both reinforc learning techniques they're used for
+18:29
+training agents and I think this is a really important word so table that hold on to that that that word uh to make a
+18:36
+sequence of decisions to achieve a goal usually in the context of a game or a simulation so that's the traditional
+18:41
+context of this traditional like it's a couple of years old so anyway so Q learning uh so if you remember you've
+18:48
+got your AAR algorithm has your transition cost which you pretty well know it's like how much time how much distance whatever it is distance is easy
+18:55
+right if you're going from one place to another you know how many miles or kilometers it is from this city to this city the thing that is interesting about
+19:03
+AAR is that heuristic which is that a person has to use their knowledge their
+19:09
+their domain specific knowledge to determine what it is that's that cost to
+19:14
+get to the goal the estimated cost so where Q learning and deep Q networks come in is figuring that part out it
+19:21
+starts to figure out the heuristics for you which is good because in a lot of situations it's really difficult to know
+19:27
+what theistic is so anyway so you've got some uh your environment and your agent so your agent
+19:33
+is your thing right where your your piece that's moving around through through this world or your car or something and it interacts with an
+19:40
+environment which is a markof decision process don't even worry about that stuff that's not important for this discussion uh and then the Q value the
+19:46
+core Concept in Q learning is a q value or action value which represents the expected so this is theistic part of
+19:54
+future rewards for an action taken in a given state so again a reward for driving I think it's just very easy to
+20:00
+understand that is that it will take you the less time or or the least amount of time or the smallest amount of miles and
+20:06
+oftentimes like I think in Google maps you can set those two options it's like a toggle you can be like I want least
+20:12
+miles or least time but anyway so let's just assume least number of you even do energy yeah most energy conservative and
+20:18
+everything else you least altitude change because if you're towing you'd want to know that exactly
+20:24
+right you can come up with all kinds of cost functions yes right but so the cost function we're just going to Define
+20:30
+again that's the kind of fistic thing is well the cost function is we don't want it to be any more miles than it could be
+20:36
+and we're going to go simple but anyway it figures that out and then the algorithm maintains a q table with Q
+20:42
+values which would look like something like this you've got your state and you've got your actions and you've got
+20:48
+your expected reward for each of those actions so that's kind of where you are
+20:53
+so it has a q table and then it deres a policy from those Q values which is what
+20:59
+am I going to do so agents have policies agents are like little mini people and they have desires and they they have
+21:05
+policies and they figure out what is the you know optimal policy to take going forward and then the update rule is this
+21:11
+math and again it's not important for what we're talking about here but that's it's not that complicated honestly it's
+21:17
+just it's just a few uh basic factors and some multiplication and addition and stuff but you figure can also be the the
+21:24
+combination because what does it mean to be optimal so it's it's pretty clear say we want the thing with the lowest
+21:30
+mileage but it could be well I want a combination of lowest mileage but also or or best mileage best time and and
+21:37
+best economy or something like that and so you have to have some sort of waiting function might say well you go a little bit further out of your way but the time
+21:44
+might be better and you'll actually save gas on it or something I I think like I think if you look at that you can easily
+21:51
+see that if you look at a map like say say just wherever you are take a Google map thing and find something across your
+21:56
+country from you and then look at all the surface roads and if you mapped it out you could find a shorter distance
+22:02
+taking Surface roads but it's G to take the highways because the extra distance
+22:07
+that you go on a highway versus taking the absolute shortest road is completely compensated for by the fact that you're
+22:13
+not going through a city you have faster speed limits you don't have lights and things you have to deal with so obviously you know so so yes you're
+22:20
+trading off time for mileage clearly in that case so yes um so anyway the Big
+22:26
+important part about this is that it's it's a State update which is exactly what AAR does is that you have a new
+22:31
+state and the new state is figured out by taking the current state and you know
+22:38
+estimating what the cost of going in any given direction is and then figuring out the the optimal next next move basically
+22:47
+so it's just a better way of doing AAR but with with agents and things anyway and then we get to deep Q learning and
+22:53
+so so previous to this we don't have deep neural networks in the in Q learning it's just creating a table and a human you know scotter ey could be
+23:00
+like oh yeah I'm estimating the the you know the the action will give us a0 seven whatever that means but in this
+23:07
+case deep Q learning is using a neural network to figure out the table um so
+23:12
+yeah so to approximate the Q values the approach is particularly useful in situations and this is very important
+23:18
+too with a very large number of states and this is where qar is going to come in so large numbers of States means a a
+23:25
+game of chess even has a large number of states because it's got crazy amount of stuff go has a large number of states
+23:31
+reality of any kind large language models slash driving any of that kind of
+23:37
+stuff has huge huge numbers of States so this is where things start to you know really become important because AAR is
+23:42
+going to suck at that it's just it's just not it's the order is it grows too quickly and so it just can't handle that
+23:49
+kind of stuff so anyway so then you have neural networks and that um predicts the Q values and then there's some other
+23:56
+stuff there's Target networks and experience replay but that again is not important for our discussion and then it did a terrible graph here but but
+24:03
+basically you know so you've got this idea of a q table and then you can update the Q table to uh to create a new
+24:12
+Q table which changes some of these values based on how you just moved so that's essentially what's happening but
+24:17
+you're using a neural network to do this instead of a human being to do it so that's basically what you're doing and
+24:23
+then it it it has an idea about qstar but this is not the right definition this isn't from the paper this is
+24:29
+actually an optimal so star usually means like Optimal in this kind of context and so qar is like the optimal
+24:36
+way to go but I think in the context of the paper and I want to bring that up next um it it is it's a little bit
+24:44
+different so all right do you have anything to add to that or because I I definitely want to talk about yeah I think it's right so so just the Q would
+24:51
+be a way of being able to find go from the current state to maybe some result but it's not necessarily the optimal one
+24:57
+and the qar is searching over all possibilities and then finding what's the best one and the problem is if
+25:03
+you're searching over all possibilities it takes a long long time but if you can come up with a way that's very very
+25:09
+efficient then yeah that just accelerates everything a lot and and what I've I've seen what people were
+25:15
+saying that they're talking about a couple orders of magnitude faster than AAR trying to do something similar to this right and the question is where's
+25:22
+where's the application of this going in and so right it turns out that AAR is probably not a bad analog to what qar is
+25:30
+it and it may turn out that not only is it not a a bad analog but it may
+25:36
+actually be that it is used sort of in the learning context and then qar is
+25:41
+just putting it on steroids so it's able to find that answer really quick you and I looking at that map you know all the
+25:48
+possibilities and we saw how that search map was going you and I would like quickly say no this I just go right
+25:53
+through there and we'd we'd come up with a really good guess we could then give that to AAR and AAR could go through and
+26:00
+confirm that pretty quickly that yeah that's your best guess without going off all over the place so right right that's
+26:06
+where intuition kind of comes in and what it seems to me is like qar is is a
+26:11
+way of replacing a heuristic with more intuition about the problem because it
+26:17
+understands the problem again this idea that large language models have no idea what a map is spatially yet from Reading
+26:24
+enough stuff about the relationship that different cities have it's able to reconstruct that in science
+26:29
+so that's information it was not actually given but is derived information it's understanding of what's going on and again you can then use that
+26:37
+to int it of what is going to be the best possible solution and then you can just focus on that and then find well
+26:44
+it's not exactly that one but just a little bit to the side is the what's actually the best one right so so yeah
+26:51
+let's turn to this paper I think this is where we're really starting to get into the the meat of this because this is is
+26:57
+uh Adrien dman found this so good for you Adrien thank you for finding this and and then Stephen uh but it was
+27:04
+Stephen melier was uh who's one of the authors on this paper um wrote about this when people started talking about
+27:10
+qar the last couple of days he's like hey we got there first and so this is agust anelli at all from March of this
+27:16
+year on archive I don't know if it's been published anywhere else so you know peer review whatever but anyway um uh
+27:23
+I'm gonna I just have some highlighted sections and I want to show this uh and I'll leave a link to to the paper in the
+27:28
+description I don't have it in there right now but I'll do it once this is not live anymore uh but anyway so so
+27:34
+yeah um AAR search important obviously um the problem is that the computation
+27:40
+and memory requirements grow linearly with the size of the action space which sounds good but it's not as good as it could be um the the burden becomes um
+27:48
+even more apparent when AAR search uses a heris function learned by computationally expensive function
+27:53
+approximators such as deep neural networks which would be deep Q Networks so anyway they're like this is the
+27:59
+problem we're going to solve this using qar so and again look at the go back to
+28:04
+the title for a second that title is intriguing yeah right AAR search a star search without expansions right I mean
+28:11
+that right there tells you everything you need to know so again it's like playing a game of chess and you're in a certain position and you have to
+28:17
+consider every single possible outcome however a grand master he's already seen
+28:23
+that situation right and he knows that this is the right move doesn't have to expand or go down anything it just knows
+28:30
+that's the move that you're going to go ahead and do so this is intriguing that wow how can you do a search without
+28:36
+expand it must be it must be a little bit of expansion but they might be just talking about you know not this really large expansion you have to do which not
+28:43
+only takes time but takes a lot of resources because basically you're going you know down a tree and then having to come back up a tree and doing it again
+28:50
+and again and again that's exhaustive yeah and that's that uh if you go back to that little thing that I showed of
+28:55
+the US with the train networks it's like you see it spreading out so it's expanding and it's going down this route
+29:00
+and then it's like nope that's no good and it goes down this route it goes like no that's no good and it's like oh this one's pretty good so I'll keep going there you know basically it's like slime
+29:06
+mold you know is what it's doing SL mold is moving towards something going off in different directions and then once it finds that route suddenly all those
+29:13
+tendrils die off and it justop that's the way you want to go right so so yeah so anyway so yeah it's learning
+29:18
+heuristic functions with DEQ networks and uhu you know AAR search so obviously they're related to each other which is
+29:24
+why we've been talking about this um so anyway we're going to go down look at a couple of of tables and graphs and
+29:31
+things like that um again read this if you want to it's it's relatively deep but I'm just trying to get in here so RC
+29:37
+is Rubik's Cube and the number of meta parameters they've gave it so the first one is very very small just with 12 and
+29:44
+then 156 and 1884 and I believe that's the number it's like a it's like a giant meta Rubik's Cube with like 1884 faces
+29:51
+so imagine like a huge one that you have to solve right so so I anyway I think or
+29:57
+anyway something like that I I could be wrong about that but the idea is that the 12 1556 1884 is massively more
+30:04
+complicated to solve as you get to each of these things and of course the traditional bold face the Q learning is
+30:11
+um iterations per second it's much faster and the training time gets absolutely nuts versus kind of a
+30:17
+standard I mean when you look at this when it's small they're pretty comparable I mean q learning is is a
+30:22
+little bit faster but look at this when you get to 1884 we're looking at 0 .4
+30:27
+iterations per second uh using Davi and it takes 347 days to run this algorithm
+30:34
+whereas the q-learning uh algorithm their qstar anyway it takes two and a half two 2.7 days so it's the the the
+30:41
+difference the Gap just becomes massive when it gets really really complicated so anyway uh then you've got
+30:48
+and there's an interesting thing here where actually AAR is faster for Rubik's Cube 12 you can see it's just a little
+30:55
+bit faster here but that's that's a toy problem it's very very small and the whole point of this is when you get to
+31:02
+really really really big search spaces this operates just outstandingly
+31:07
+well so what you really want to look at is this this over here like these guys whoops uh anyway these these numbers
+31:13
+over here are where you can see that um you're looking at uh 100 you know 1288
+31:19
+nodes and um uh 280 anyway so it's just way way faster with that and surprised
+31:27
+that that when you start getting things that are very complex that uh your algorithms are are not going to be as
+31:33
+efficient but when they're small the algorithm will probably beat anything else so if you remember yeah from being
+31:40
+able to like invert a matrix right you know there were there was some very straightforward close form ways of doing
+31:45
+it that are very precise and very easy using something called Kramer's rule which no is is not meaning the inverse
+31:51
+Kramer or anything like that but it's it's a straightforward way of being able to do like a 3x4 4x4 Matrix but once the
+31:58
+Matrix starts getting big you know like 6x6 or 8 by8 or Way Beyond that and suddenly you you start using um like
+32:05
+gaussian's rule or or to to be able to do the elimination lud decomposition
+32:11
+because it's much faster and so you end up finding that depending on the scale of the problem yeah an algorithm might
+32:17
+be perfect and even um preferred for something very very small but once you
+32:22
+get complexity you have to bring in something else to be able to solve so I'm not surprised to see that yeah the
+32:28
+traditional way is still going to be faster when it's smaller right but at some point it takes off yeah yeah and so
+32:35
+again you can see down here there's some bold-faced stuff that shows that uh qar is outperforming by a significant margin
+32:41
+um the the sort of more traditional stuff so anyway there's a whole bunch of other stuff whole bunch of other stuff
+32:48
+um the this table shows that though the rc1 1884 has 157 times more actions than
+32:55
+rc12 in other words much much bigger search space qstar only takes 3.7 times
+33:00
+as long to find a solution and generates only 2.3 times as many nodes that's what this table up here is so this is pretty
+33:07
+outstanding whereas AAR on the other hand takes 37 times as long and generates 62.7 times as many notes so
+33:15
+AAR is growing the whole point of this paper is look what we're doing we're
+33:20
+we're guiding the search right the the whole thing about this deep Q network is we're not just like randomly guessing
+33:27
+doing a better job of that heuristic that heuristic rather than just kind of going like well head Southwest that's
+33:33
+generally the right answer to get to LA from New York you're giving it a well what you probably want to do is look at
+33:39
+getting on an interstate first and then you want to think about maybe going through Philadelphia first and or maybe
+33:45
+avoid that going on a bypass you know so it'd be like if you were telling a person you could just kind Scott goes
+33:51
+like hey you know John how do I get from my house in Tampa to uh to your brother's house in Manhattan Beach
+33:56
+California and I'd go like just go west and you're like oh great you know so Scott's driving into the ocean and then
+34:02
+he's like well that's not going to work and then he's like I got to go up the ocean you know but if I gave you a lot of information and I said okay you want
+34:08
+to do this you want to get on a highway you want to go north first until you hit the 10 then you want to go west you know
+34:14
+I just stay in the 10 I mean yeah people no right away just get up to the 10 and you're okay then you just figure out how
+34:20
+to get there exactly and again that's because you have some sort of outside knowledge or you've been able to get
+34:26
+like an overview of the Network and you've taken that whole network and You' kind of compressed it in some way that
+34:32
+now you have this kind of Intuition or feeling that this is the solution that
+34:37
+you want to have because you see the big picture whereas AAR never really sees the big picture it it just more or less
+34:43
+knows that this node is connected to these nodes and I've gone down this tree and I know what the cost is if I go off
+34:49
+in this direction and now I want to try another route and keep on comparing and comparing and comparing yeah it's um I I
+34:54
+think I think that's actually super good to dwell on for a second it's the so AAR what AAR sees again just
+35:02
+use New York as an example it just sees Boston 200 miles Philadelphia 145 miles
+35:09
+uh what's another close one um New Haven whatever miles right so all it has is it's like I'm here and here's a bunch of
+35:15
+distances but it's great it goes to Boston it's like well let's say Boston was no New Haven so let's say New Haven
+35:21
+was was only like 57 miles and I'm just th pulling these out of my butt but anyway it goes there and it's like cool
+35:26
+that was only 57 miles that's the shortest distance well as it turns out any human would go like well that's the
+35:31
+wrong direction dumbass so you know what are you going that way for so so but the problem is that a star's dumb it has to
+35:37
+get to a point where it realizes oh now I've had to go around the horn and you know and that's like oh now this is super long so that's a bad way to go but
+35:45
+with better heris sixs and this is what these deep neural networks are doing these deep Q networks they're going like
+35:50
+well let's do a better job of understanding where we are and what's happening and what the state is and what
+35:56
+the EXP expected outcome is so that we can get you there faster and that's that's kind of the goal of this whole
+36:01
+thing so oh man it didn't take my uh I had these highlighted here so I guess
+36:07
+for some reason anyway so this is important here as the size of the action space increases qar becomes
+36:13
+significantly more effective than AAR in terms of solution time which is important and the number of nodes
+36:19
+generated which is super important because eventually you run out of memory and there's a couple of graphs up there where they're like AAR ran out of memory
+36:25
+so we don't have like data for it because it just was like can't do it doesn't matter how long it it gets crazy
+36:30
+because you have to cash like all those routes so you can start to compare them because it if one route is is the best
+36:37
+route well then you need that information to how you got there right right so anyway and then uh it talks
+36:42
+about how the small space is but we don't care about that for this discussion but in the largest action space qstar is orders of magnitude
+36:49
+faster and generated orders of magnitude fewer nodes than AAR while finding Solutions with the same average average path cost so um so you have to run these
+36:57
+simulations a lot of times to get an average of course because just one time it might get lucky I mean maybe it just
+37:02
+picks the exact right path and aar's like did it took me one shot and I did it but that's very unusual it's not
+37:09
+going to happen very often so anyway you run it a bunch of times and you look at the average of this and so this is a
+37:15
+significant um Improvement here right and then uh so the so anyway qar here
+37:23
+uses a deep deep Q Network to eliminate the majority of the computational and memory burden associated with large
+37:30
+action Spaces by generating only one node per iteration and requiring only one application of theistic function per
+37:37
+iteration and it's really interesting what it's doing is it's actually estimating the uh and I had this
+37:43
+highlighted I'm gonna see if I can find this uh uh let's see
+37:49
+architectures could be modified shoot it has a whole bunch of things but where is
+37:54
+that um so sorry I can't find it but
+38:01
+basically it the idea is it doesn't even have to know all of the different pieces
+38:06
+of the path it just knows the general if you take this action this is going to be
+38:12
+the cost overall it doesn't have to calculate individually it so it's it's very cleverly using the Q table to just
+38:19
+sort of summarize it's so it's just it's again it's just guiding it's just like this is a good gu yeah so again you want
+38:25
+to go from New York to LA right and um you you know it's like clearly don't go
+38:31
+over Seattle go over Kansas City right now we don't know all the steps in between there but we know that's going
+38:36
+to be better than going that other route and so once you have that guiding principle you can then go ahead and and
+38:42
+fill in the details as necessary right and and this is also important I just want to call this out here really quick
+38:48
+qar can solve problems with Dynamic action Spaces by choosing a dqn architecture that uses structured
+38:54
+prediction but the important part here is dynamic action spaces in other words it doesn't have to be static it's not a
+39:01
+maze algorithm is a great one it's a static one right so you got a bunch of spots you can't go so what's the fastest way through the maze that's just static
+39:07
+but everything in reality language is dynamic driving is dynamic talking to you is dynamic you know all of this kind
+39:14
+of stuff is dynamic and in the dynamic action space it has a distinctly it is able to deal with that Dynamic action
+39:20
+space so that is really again if we go to to qar or or sorry AAR when looking
+39:26
+at the network the whole assumption is that that network is static that we we've loaded all the data in there we've
+39:31
+calculated all the distances because the cities don't move around or something like that and if you're just looking at
+39:37
+it from a distance standpoint that's fine but if you're looking at it at a time standpoint that's changing and that's changing all the time partly
+39:43
+because you know suddenly maybe they've they've uh built a new roadway that's suddenly going to be a bypass which is going to make some like lot faster so
+39:49
+now you got to consider that uh in there you've got got to add that in and of course dynamically all the time changing
+39:55
+because of construction because of accidents because of traffic and everything else that suddenly what
+40:01
+seemed like the quickest path is changing which means you have to constantly be able to reevaluate it now
+40:06
+it's fairly easy to reevaluate it because you already know what's the way you want to go to La and it's not like
+40:12
+you're suddenly gonna decide whoa we're gonna go over Seattle right now it's a bad idea to go in the direction of of of
+40:18
+Philadelphia or something like that by the way sounds like something I would do it's like it's like there's a traffic jam I'm going to go 100 miles out of my
+40:25
+way to avoid this traffic like probably 2,000 miles out of your way so you know it's going to be roughly along that way
+40:30
+but still you know the example of the roadway Network it changes a little bit
+40:37
+but the state of the world that you would be typically going through could be changing a lot because everything is
+40:42
+moving around so you're trying to avoid these different obstacles and at one instant you can look at all the obstacles but the next instance all
+40:48
+those obstacles might just start moving around really quickly and you have to come up with a completely different decision map okay so let's take a moment
+40:55
+because I I see there's a bunch bunch of comments and I do want to look at those but let's take a moment to talk about
+41:00
+consequences of this so so this is a paper from March again I should have said this at the beginning but this is
+41:06
+all speculation we're going to be wrong about some of this stuff it's quite definite but the speculation is that
+41:12
+open AI has taken this and they've run with it and they've figured out how to
+41:18
+utilize this in at least language maybe multimodal AI stuff so gp5 using qar
+41:26
+what that would allow it to do is to operate much more efficiently memory-wise to get to An Answer faster
+41:32
+and and again another part of this whole thing is this math thing where where they it apparently got 100% on like sort
+41:38
+of grade school middle school math as opposed to like 80% or something um and that doesn't sound like a lot but it's
+41:43
+huge to get 100% is is absolutely stunning with something that is a
+41:49
+statistical uh let's let's bring in like uh paro's rule here so yes usually to
+41:54
+get up to 80% requires 20% effort yes and to get from 80 to 100% requires 80%
+42:01
+effort so the last 20% requires more effort than everything else so you may not think oh it's very much like nope
+42:06
+that's where all the effort is going in so that is something really big yeah it's huge and and it's a it's a lot of
+42:12
+it has to do with just the way that neural networks work because they're statistical and and statistics doesn't
+42:17
+answer math problem problems because there's no creativity I mean there I take that back people don't get on my
+42:23
+case but you know what I'm saying is 2 plus 2 four and that's just you know you can't you're not being like 2 plus 2
+42:29
+equals four except sometimes it's 4.5 uh so so you know and that's what a large language model will do to you is it'll
+42:35
+give you an answer that most of the time is right and not sometimes and it becomes harder and harder the more
+42:41
+complex the math becomes because you have to follow the train of thought uh Chain of Thought So anyway so the the
+42:47
+deal with this would be that this qar would be a guiding type of thing where it would say like no these are the
+42:53
+better possible solutions examine this solution space more closely this is probably the right thing and then it's
+43:00
+always easier to check your answer than it is to come up with something that's that's another another I don't know
+43:06
+whose rule that is but that's an important rule because it's one of those like you know that it's like the it's
+43:13
+it's pretty easy you can say like hey is this is this right or not and you do all your math and stuff and then it's fairly
+43:18
+easy to go through and go like nope you multiplied wrong here and so you know that's a lot easier than coming up with the original solution uh so so anyway
+43:26
+that's one piece of this another piece of this is that this as I said at the beginning has agents and agents
+43:33
+reinforce themselves they learn on their own and and this is the kind of thing like Alpha zero did where it played
+43:39
+itself a m who knows 10 million times in go and suddenly became way better than
+43:45
+the best Alpha go player in the world this is doing this but potentially in
+43:50
+real life not in games and it's it's like infinitely harder to do that in real life and that's terrifying because
+43:56
+if these things can learn on their own create their own data learn the optimal things and do it in a memory efficient
+44:03
+and very computationally efficient way so they can do it quickly that means that we've there's the the the hockey
+44:08
+stick thing there you're going kind of flat and then all of a sudden it's like and it just takes off and they might have gone like uh oh it just went you
+44:15
+know the hockey stick just went straight up Scott's looking at me like uh yeah
+44:21
+it's scary yeah yeah yeah I'm just thinking that you know the with the old saying follow your load star now you're
+44:27
+saying follow your qar this is basically what's going on so that's that is your guiding principle now so follow right
+44:34
+you're qar the I think the big the tldr of this is that qar if it's working the
+44:40
+way I again we're guessing is that it um it it might be cutting humans out of the
+44:47
+loop because the whole thing about this has been reinforcement learning through human feedback so there's been this human feedback in the loop where we're
+44:53
+the ones providing theistic basically that's what the human feed feedback is is like yeah I like this answer better
+44:58
+than that answer that is US providing heuristics but if the computer doesn't need us anymore we're super slow the
+45:05
+computer can go way way way way faster than we can so it's just most of the time sitting there waiting for human feedback if it doesn't need human
+45:12
+feedback anymore that's a big deal and then agents is a is a really big deal because I am very careful always to be
+45:18
+artificial general intelligence is a tool it's a very general tool a very cool tool but it doesn't have any
+45:24
+desires of its own agents on the other hand are a whole different matter that's the I you know I'm sorry I can't open
+45:30
+the pod bay doors Al or Dave um that's the kind of situation we're getting into
+45:35
+if it's an agent uh and then do you want to talk real quick about the I can't remember the number but the encryption
+45:41
+standard it's like AE something or other um this is another piece of the puzzle and uh okay so I'll just talk about this
+45:46
+really briefly but somebody brought this up on on X this morning I saw that too yep yeah yeah yeah and basically there's
+45:52
+there's an encryption standard that is unbreakable they're like quantum computers someday might be able to do it
+45:57
+or something and I the the another hypothesis here is that this qar thing
+46:04
+learned so quickly and became so good that it broke it it was just like oh yeah I can figure out what this
+46:09
+encryption is and I'll tell you what the the plane text is and if that's the case then all of our banking all of our
+46:15
+security like everything is mooded and that could you know if you think about that open AI ilas sver Sam Altman all of
+46:23
+these guys could have been like holy crap this is a really significant problem and could have had falling out
+46:28
+about that yeah yeah yeah exactly wow shisa that's yeah that's terrifying right and
+46:36
+also also a reason why board might not give a public reason for doing this they might be like nope we're not going to
+46:42
+tell anybody because we don't want anybody to know but if we're guessing correctly and who knows if we are it
+46:47
+doesn't matter whether they tell us or not because now that people know the steps to get there somebody else can
+46:53
+solve that problem and and so but then doesn't it work kind of both ways that as someone is like um basically able to
+47:00
+break all of your encryption you can probably figure out where the attack Vector was coming from because whatever
+47:06
+that thorny Wicked is that you're trying to go through it's like yeah oh that's coming from there so it it might be easy
+47:12
+to to break into someone's house but you might also be able to prove that you were the one that broke into someone's house just like that yeah except the
+47:18
+problem is if they can break this stuff and they can do it relatively quickly they just take everybody's money and
+47:24
+then what does it matter with they caught or not it's like take it back from them you know that's that's exactly
+47:30
+so know yeah but that's that's yeah okay I'm just thinking talking about M yeah
+47:37
+yeah M Mass but it's almost was it David brenn with his book you know the whole idea is everyone knows everything about
+47:43
+everyone and so we're almost at that stage right it also makes you wonder and
+47:49
+I haven't thought about this I'm thinking about this in real time but it makes me wonder about blockchain versus this because one of the things about
+47:54
+blockchain is it's it's work-based so I but I don't oh man so they have to mine
+48:01
+in order to get solve algorithmic primes I don't know it could break blockchain as well I I I'd have to think about that
+48:07
+more yeah I think well the only thing it comes down to is that what if I
+48:13
+understand right what really makes bit chain Bitcoin unbreakable is the amount of energy that you need to do it right
+48:20
+so that that's basically what it is is that if you have a limit amount of
+48:26
+energy then it's this becomes very very hard so it it's something you can break it just takes a lot a lot of time right
+48:32
+now and the question is whether qar could do that any faster that that's open question that if it does yeah then
+48:38
+it breaks it but if it's still the type of thing it's like nope you're still going to need you know incredible amount
+48:43
+of computing power and a lot and the energy that goes in it because that's the whole thing is you can have as many chips as you want out there but if you
+48:50
+don't have the power station to run those chips then you aren't able to do it yeah but let me throw out a devil's
+48:56
+advocate situation here and that is let's say that this thing figures out
+49:02
+so the whole idea is you're mining something you're trying to solve a very very intractable problem and it takes a long time and a lot of compute power but
+49:09
+if this thing even if it can't figure it out instantly if it can figure out say 10% faster than everybody else that
+49:15
+means you use 10% less energy 10% less compute time and and if it's half as long then you totally crap you know but
+49:22
+any kind of Advantage you have in that is going to give you an outsize yeah that's that's sort of already happening already because you have people that
+49:29
+bought those gpus like five years ago want to do Bitcoin mining and then suddenly they're like useless yeah the
+49:35
+next one's kind of come along so it's just like another kind of version of that it's just that whether that becomes
+49:42
+democratizing have enough and then the question is whether someone is then able to somehow get 51% of the compute on the
+49:49
+on the blockchain and then that's when it gets dangerous yeah and and of course
+49:54
+people are there's a lot of stuff going on in the comments right now about blockchain but it's basically proof of
+49:59
+work but if you can cheat the work in other words if you can work smarter not harder and solve these problems any
+50:05
+faster than the basic model then it's going to give you an advantage so um yeah let's take a look uh knocking the
+50:11
+door but I guess what all it does is it means see this is where it really comes down to um yeah if the proof of if
+50:18
+you're just getting the proof of work quicker that just means you're able to to hoard more and more Bitcoin but then
+50:24
+there's the other is that if end up having enough nodes on the Bitcoin on the blockchain right yeah and then you
+50:30
+can go in and you can serously change things because in the end it comes down to okay here's my proof of work and then
+50:36
+that everyone else agrees oh yeah your proof of work is right but it's like no we're really cheating we're making everyone you know think the proof of
+50:41
+work is right we're able to then insert something so then it just kind of comes down to um whether that would allow you
+50:48
+to change the blockchain because you dominate such
+50:53
+incredible amount of the compu that's out there right right uh Hey Fay by the
+50:59
+way has has posted some interesting stuff but I don't know uh Fay if this is true or not but it uh she says that
+51:06
+grock plays physics games so I don't know since I don't have access but that's actually really cool so that
+51:12
+would be really interesting but um I'm sort of looking through here uh if there's any ideas for this yeah a lot of
+51:20
+people are on on the blockchain idea so really interesting qar is the beginning of the end yeah that's the kind of thing
+51:25
+I think about is that qar could be the beginning of the end here it's very um it's it's it's I don't know there are
+51:33
+potentially terrifying consequences to this and I have always been very careful to say like AGI is scary in the hands of
+51:40
+Bad actors aiaia which is artificially intelligent agents are scary on their
+51:45
+own face because they're just like they have their own desires and we don't know what they are AGI right now is is has no
+51:52
+desires like if you I can open up my chat GPT with window and I can let it sit there for a month and it won't do a
+51:58
+thing it has no desire it but right but an an agent once you create an agent that has its own desires and is acting
+52:04
+in the world on its own that's a whole different matter uh I mean what if you told if if this thing hypothetically
+52:11
+existed and had not broken what is it sha 256 or whatever the the you know the big standard of encryption is if if it
+52:17
+hadn't broken it yet and you just said hey yo go and solve this problem and figure it out it probably would do it it
+52:24
+might take a little while but it probably figure it out it would say like okay you know that's an agent that's just operating on its own and figuring
+52:30
+out how to how to do that um by the way just this totally random side issue but
+52:37
+I think it's really cool that there has been a lot of work recently called trading time for accuracy and that's a
+52:44
+that's a cool aspect too which is basically that when you're asking chat GPT to generate the next word you're
+52:51
+giving it a certain number of of microsc or milliseconds to do that so it's like do it now do it now do it now do it now
+52:57
+that kind of a thing and what they're discovering is if you say like no no no take more time you know now you have
+53:03
+like seconds to generate each word or or or whatever your thought is take as much time as you need it comes up with way
+53:10
+better answers so you can trade time for uh for for much more precise answers
+53:16
+and the way they're doing that interestingly is similar to this scot so it's going to circle back to AAR what you do is you generate multiple it's
+53:22
+like a little bit of a Monte Carlo thing you generate a whole bunch of possible answers and then you check the answers to figure out which one you like the
+53:28
+best and then you work on that so it's very similar to AAR here and maybe qstar
+53:34
+so yeah and that that already kind of freaked me out that uh I think Robert
+53:39
+scobble was the one that was saying he he gets much better answers that when he puts it in there and he just says you know and take a breath yeah and like
+53:47
+what's that got to do with it and then he says yeah it's much better and the speculation like wait a minute does that mean it really kind of understands
+53:54
+itself and how it operates and knows that you want me to kind of do this or make this adjustment or go into a for
+54:00
+Loop a few more it to me it just seemed kind of weird that making some sort of statement of like you know take however much time you need to be able to do it
+54:08
+actually tells it to go in deeper uh which seems to be a really interesting hack or that you know almost like the
+54:14
+self-awareness that right chat has about itself and to me it's just it's kind of a head scratcher that's like really that
+54:22
+that's all you have to do as as opposed to like some temperature setting or something else that you would think you'd explicitly do right just a random
+54:28
+piece of text is going to be enough now well show your work does that too so yeah right right but some I mean some of
+54:34
+the other things is that if you kind of restrict it on what you want the output to look like that's s to help so you say
+54:40
+you want a form of a Shakespearean Sonet then you know it does have to think a little bit harder on that or if you want
+54:45
+it you know uh you know write it like Hemingway it'll do the same thing but that's one thing the other thing is to
+54:52
+say take a breath all right well why should that affect the output at all
+54:57
+what it seems to right yeah no and I I think uh uh where is this uh Alum I
+55:03
+guess said take a breath and think in steps brings me better results so those two things together but those are related to what's going on here because
+55:10
+a lot of what's happening and a lot of the rumors around this are that this qar thing is has an awareness of itself it's
+55:19
+able to again because it's an agent it's like oh that wasn't great my solution to
+55:24
+this problem it'd be like you know again New York to LA and it's like it found a way but it's like not that good and it will evaluate itself and say like H that
+55:32
+wasn't great so let's try again and so at that point it's able to update itself it's on its own and say like yeah let's
+55:39
+make this better and make the architecture better and make the predictions better because it's able I guess to alter that deep Q Network that
+55:46
+that table that it's got effectively table that it's using to figure out what the heuristics are and if it can update
+55:52
+the heuristics on its own without a human in the loop that means that it's able to then improve itself so it there's a
+55:59
+level of self-reflection going on which is really interesting so yeah I could be interesting that you drive a particular
+56:04
+route and even though you say okay just give me a route and it gives it to you it's still thinking about it it's like
+56:10
+ah kind of Nag his nagging idea here is like is there a better way and he keeps on thinking about it and thinking about
+56:16
+you know you go to work and like that and he says hey John you know what I've been thinking about this all day it's
+56:22
+really been bothering me you know what there's a better way and the better way is to go through your mall like what you do or something like that yeah that
+56:28
+would be kind of crazy that if if that agent just never kind of stops that once you make that query it just keeps on
+56:35
+thinking about it and we as humans sometimes are like that that someone will ask us something we'll give an answer and then we'll wake up in the
+56:41
+middle of the night and say oh wait a minute I've got a better idea or like again you get this nagging suspicion
+56:46
+that there's some other sort of answer and sometimes it'll just pop up like a month later suddenly go oh remember you
+56:52
+asked me that I you know I just thought about that this would be a better way right do you think it's going to start doing something like that that it's just
+56:58
+going to keep on processing in the background well this is actually this Tracy's comment here is really interesting it's okay take your time uh
+57:05
+so yeah I don't know it seems like it already kind of does that and remember we're talking
+57:11
+about GPT 5 or something at this point or grock 2 or whatever uh so the
+57:16
+potential is that we will get that sort of explicit it sounds like it sounds like people are making good progress
+57:23
+It's really interesting Andre carpath did you you watched his talk right on large language models it's a really good talk just search his YouTube channel um
+57:31
+or X and um he said specifically in this that algorithmic improvements are not
+57:37
+that important it's all been about how much data you can throw at the problem and it just keeps getting better but my
+57:43
+opinion is that we're missing a major algorithmic breakthrough or maybe we're missing an algorithmic breakthrough that
+57:50
+we need to jump to the next level because these you know it's it's it's learning but it's not learning that fast
+57:56
+but holy crap if if this is that algorithmic breakthrough and it can improve efficiency reduce the compute
+58:03
+cost reduce the memory footprint all of that kind of stuff and make itself aware that's that's just huge and and I want I
+58:09
+do want to turn to um Tesla right now because full self-driving if the Tesla AI team hasn't looked at this previously
+58:16
+they probably everyone's ears probably perked up when they like you know heard about this stuff and the rumors because
+58:21
+they were probably like wait a second what's the most complex thing in the world reality and so here talk about a
+58:27
+gigantic solution space that you have to search if there's a way of reducing the the the the problem is heuristics and I
+58:35
+you know how does it figure out the heuristics but that's what the Deep Q networks are so basically you're
+58:40
+training a teacher you're you're saying here learn about the world figure out what the best possibilities are and then
+58:48
+go and train the student so I I guess as an analogy that might work I don't know does that make sense yeah okay
+58:55
+um yeah so uh cognitive scientist sorry I'm looking through all these things at the same time I I need I need a
+59:03
+producer sorry sorry folks if I'm missing good comments I'm trying so
+59:08
+um yeah gr okay I don't know if you've seen anything in there um Scott as
+59:16
+well all right yeah this is kind of an interesting one
+59:21
+you're training your replacement yeah we kind of are I I think that's that's been true for a while and it's becoming it
+59:27
+could be true yeah I'll be taking it over the channel before John knows it I don't think he's talking about well
+59:33
+okay fine talking about me oh virtual and virtual John exactly both of us are
+59:39
+gonna be replaced here yeah eventually I won't have to do anything anymore I'll just be like hey come up with a video
+59:45
+for today record it make it look like me that'll be awesome anyway it's it's
+59:52
+already happening that's a scary part uh Elon in FSD fun yeah so full self-driving 12 full
+1:00:00
+stack who knows if this qar stuff it just seems like I don't know it's
+1:00:06
+interesting because um qar in this circumstance is generative in the sense that it's
+1:00:13
+figuring out the next best word or whatever the thing is picture or something like that to to put out and
+1:00:20
+one of the things we've been seeing from people at cvpr back in June from Tesla
+1:00:25
+is that they are working on generative driving so rather than reactive it's
+1:00:31
+actually sort of generating the expected next frame so it's like what is the next
+1:00:37
+frame of time going to look like and therefore once it generates that right if it can generate two seconds worth of
+1:00:43
+that it can navigate within that world and so again if you can more efficiently
+1:00:49
+create that and get closer to a better answer quickly that gives you some really really important leg up here so
+1:00:55
+uh wouldn't a quantum computer be good at this that is uh yeah yes uh the
+1:01:00
+problem is that quantum computers are still pretty pretty challenging to make
+1:01:06
+so I but the algorithm is designed for it's called Q
+1:01:11
+yeah that's true and also of course we got to have the real Q in there like from Star Trek
+1:01:18
+so it's just funny that this is all sort of like cycling back on itself um okay
+1:01:24
+let's see if we got something else here if you study Logistics and heuristics of the M oh gosh for the seat of an image
+1:01:33
+um oh interesting uh yeah
+1:01:40
+okay this is actually a good point here so Chris oh sorry I I'll get to your
+1:01:45
+goad do do this one and do the one before AI to dat has been the equivalent of to subconscious reaction adding
+1:01:51
+layers and letting a model think about what it's thinking is the next layer yes so we're moving from uh the stochastic land of it just
+1:01:59
+sort of repeating things that it understands people like to hear to the level of it being able to be
+1:02:06
+self-reflective and self-reflection is massively important that's like a the
+1:02:12
+kind of the major step to Consciousness is self-reflection and the ability to go like was that the right thing to do and
+1:02:18
+then to learn from that and to do better in the future so yeah big big Point sorry what go go to 106 uh
+1:02:25
+uh yeah I'm at 106 darl Smith darl okay was a lot of
+1:02:31
+stuff basically he's imitating me it's like some of my Pros or some of my verse
+1:02:36
+recently let's see if I get this right but if you study the logistics and charistics of the mystics you will find
+1:02:43
+that their minds rarely move in a line so it's much more realistic for man with
+1:02:48
+such ballistics okay great job I like that one that was pretty good I like
+1:02:53
+Daryl there it's really good it's really good now I'll be really disappointed if chat wrote that you know hopefully you
+1:03:00
+know he came up with it on his own it's pretty good there you go we just saw that whole thing I sent you that thing about like the ex in somebody's brain
+1:03:06
+that causes them to be addicted to Jokes which was interesting was SpaceX uh yeah girdle eer Bach good book
+1:03:15
+about a lot of things theory of mind we are really getting to I mean I like that it's Gestalt I assume in a way that you
+1:03:22
+have to like think about gestal but but we're getting to a point where the question of what does human
+1:03:30
+consciousness mean is is really becoming an important question like is are is there anything special about our
+1:03:36
+Consciousness or is it just emergent from these different factors that we're building and if it is just emergent
+1:03:42
+then once we build a complicated enough machine it's gonna have to have a
+1:03:47
+Consciousness and that's kind of wild so yeah um face purple crying
+1:03:54
+oh credit Brian Eno that's cool uh okay so I don't know if there's any other comments or questions from people or
+1:04:01
+Scott what do you what do you want to wrap a bow on this I don't know if there is a bow it's a scary bow yeah it's um I
+1:04:08
+me just think about how much everything changed since last weekend last weekend we were just talking about um you know
+1:04:14
+whether Sam Alman was going to be coming back in or not and qar was not on
+1:04:20
+anyone's map at that point and then what Wednesday I mean right when everyone's going on Thanksgiving break suddenly
+1:04:27
+everyone's like what's this qar all about and yeah that means it's it's it
+1:04:33
+seems to me it's it is quite groundbreaking and Earth shattering I mean if if remember see what was it uh
+1:04:39
+lk99 remember that was the big thing that dominated what was it July completely forgotten because it turned
+1:04:45
+out they turned out to be nothing um I have a feeling qar is like everyone's going to say that okay was that well is
+1:04:53
+that going to be the big November December topic or is that going to be the topic of right uh 2023 so um yeah
+1:05:01
+it's yeah I had and I had since that whole joke about the
+1:05:06
+Roman Empire was came up and everything I was like so how many you know you guys are thinking about qar every day but
+1:05:12
+yeah it's just crazy because it was just it was just what three days ago four days ago that this all happened it's
+1:05:17
+only what it's Saturday right now right you know it's like we still have another day left in the weekend and already we
+1:05:23
+didn't have time to look at it uh because it just popped up so quickly and the funny thing is that all of this is
+1:05:29
+based there is a Reuters article but this is all Ben Shapiro has done some really good videos on this and um
+1:05:34
+explaining AI has done some good videos on this and and there's this paper so everybody is building this entire Castle
+1:05:42
+on what could potentially not even be sand but a cloud so it might be
+1:05:47
+completely stupid what we're doing here but this is this is what happens and it's exciting because even if even if
+1:05:54
+open AI didn't do anything with this I think this is a really interesting path and giving more Credence to this qstar
+1:06:01
+paper would would be a good thing because I I really think blending
+1:06:11
+cisticolas is a good idea so hey f is a Roman descendant nice yeah and and again
+1:06:18
+it's it kind of just goes back to my overall feeling decades ago of first trying to solve a lot of problems in
+1:06:25
+geometric modeling and looking at it and just saying that when I when I see it as an intelligent being it's just so
+1:06:32
+obvious what the pattern should be or what something should be done but trying to to turn it into some sort of
+1:06:37
+step-by-step thing where you just don't have that overview of an intelligent being is extremely difficult to do and
+1:06:44
+I've always felt like the missing piece in a lot of algorithms so now if you start taking these algorithms and start
+1:06:50
+blending it in with like the intuition of it it no longer is again when you
+1:06:55
+talk like Monte Carlo you You' be going through AAR and you come to a node and I have a bunch of different literal Forks
+1:07:01
+in the road which Fork do I take right and you just roll a dice and say let's try that one and you come to another
+1:07:07
+fork in the road roll a dice and try that one and you roll a dice again you do everything else what you're now talking about is that when you come to
+1:07:13
+that fork of the road you just more or less have this like Intuition or this feeling like the sick sense of like
+1:07:20
+that's the road to take right there I just know that's the right way to go and you follow that and you follow that and so and a lot of times you get that
+1:07:26
+because you have that big picture feel as opposed to just only local knowledge where you know nothing about it and
+1:07:32
+again a lot of us might say you come to that fork of the road you look on down there and you say well take the one that's the most well trodden that's
+1:07:38
+obviously the way to go because everyone's going that way but then again you know Frost said you know no you come with the fork the road it took travel
+1:07:45
+because you know maybe it turns out that's the way to go so again you you have to have this intuition of how to
+1:07:52
+guide an algorithm efficiently and if you can do that without because again you have an algorithm an algorithm is a
+1:07:58
+very clear way of going that theistic is like well we're going to apply some rules of thumb so again the idea with AAR is that potentially you say well
+1:08:05
+just calculate the distance as the crow flies between these things and know the kind of the direction and use that as a
+1:08:11
+kind of a a guiding principle that's what theistic is doing it's it's applying a rule of thumb but it's just that it's a rule of thumb it's still not
+1:08:17
+super intelligent it still doesn't have intuition and if you can take it to that next level man it's like
+1:08:24
+neural net driven charistics for algorithms will be something else right right yeah and I I think maybe a good
+1:08:32
+analogy to think about is that the Monte Carlos search is is just a die like sixed die you throw it and it get one of
+1:08:39
+six that this is what you're doing is you're waiting that die so you're not saying it's like you could wait it so
+1:08:45
+that six comes up more frequently than the others but it's not like it's impossible for two to come up or four to
+1:08:50
+come up so you're you're making it go that direction more frequently so it's going to be better aligned but so it's
+1:08:57
+explore exploit explore exploit it's like you got to go out and explore things and then you have to exploit the
+1:09:03
+one that looks like it's the best and what you're doing is you're reducing the amount of time you need to do the exploration and you can increase the
+1:09:10
+amount of time and and efficiency of doing the exploit part because you can be more certain that you're going the
+1:09:16
+right way so yeah it's it's pretty cool so Alberta hey f is like all about
+1:09:23
+Alberta so hey I'll be flying through Calgary in March by the way so on our way to Vancouver so
+1:09:29
+um yeah so so anyway uh this is really fascinating stuff again I just want to be very very clear Scott and I have no
+1:09:35
+inside information we could be totally wrong about this stuff we we're pretty right about AAR Q learning deep Q
+1:09:41
+networks that stuff is that stuff is you know established but as far as qstar and how it might be used and everything we
+1:09:48
+don't know um I'm really fascinated to find out I really wish I could talk to somebody at Tesla AI because I would
+1:09:54
+love to know if they're going like huh qar for driving interesting or whether
+1:09:59
+they were like oh that's so March of 2023 that article was you know we already did that we included that you
+1:10:04
+know six months ago so and when did version 12 kind of start uh April oh
+1:10:12
+interesting yeah I think that was March April I think that was no no I think it was actually even earlier than that so
+1:10:18
+there was a beginning of it but then I think it got green lit in somewhere around March or April if I'm remembering um Walter Isaac's bi biography timeline
+1:10:26
+could be yeah exactly so maybe there was some yeah some breakthroughs that allowed them to do that so yeah yeah
+1:10:32
+that it's like that's not an obscure paper it is to us but to anyone AI Community they would no exactly yeah
+1:10:39
+it's it's it's one of those things where I think part of your job being in that Community is that you just have to keep up with this stuff or somebody does if
+1:10:45
+you've got a team of 35 people one guy's like oh check this out I just read this over the weekend and you're like cool so
+1:10:51
+you know it gets distributed if only one out of 35 people sees it then everybody has access to it just just that title
+1:10:57
+alone when it said what you know AAR without expansion I'm like whoa wait wait I would be intrigued enough at that
+1:11:03
+point that didn't have to read the rest of the title to say yeah that's something you need to go into and investigate yeah and it is fascinating
+1:11:09
+and like I said as soon as the stream is over I'll post the link to it in the description for this video so you can have it because it's it's well worth a
+1:11:15
+read if you're into that kind of stuff it's it's really interesting really cool uh a good paper too so I always like
+1:11:22
+what papers cool well thank you Scott this has been interesting I hope people have enjoyed and obviously for folks who
+1:11:28
+come in afterwards read the comments as you're able there's some really good comments in there and sorry if we didn't
+1:11:33
+get to all of them I'm gonna get a third person eventually just to sit and look through comments and like post them for us but anyway all right well everybody
+1:11:41
+have a great afternoon and yeah and go follow Scott on H yeah we that's what we need is grock to be sitting in here and
+1:11:47
+like reading the comments and and fiing them out uh but anyway so follow Scott and me on X and on YouTube and we will
+1:11:54
+see you guys in the next video and hopefully the stream will end when I do it hopefully this was an okay first stream on streamyard I like a let me
+1:12:01
+know anyway all right cheers byebye everybody bye
