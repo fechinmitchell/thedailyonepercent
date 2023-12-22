@@ -130,4 +130,13 @@ body {
   color: #CFD8DC;
 }
 
+.section-heading {
+  font-size: 1.5em;
+  color: #CFD8DC;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
 

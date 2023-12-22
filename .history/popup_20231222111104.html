@@ -2,37 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Daily Podcast Extension</title>
+  <title>The Daily One Percent Extension</title>
   <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
-  <!-- Header section with title -->
+  <!-- Header section with title and dark mode toggle -->
   <div class="header">
-    <h1>The Daily Podcast</h1>
-  </div>
-
-  <!-- Main content section -->
-  <div class="content">
-    <!-- Dark mode toggle switch -->
+    <h1>The Daily One Percent</h1>
     <div class="toggle-switch">
       <input type="checkbox" id="dark-mode-checkbox" class="checkbox">
       <label class="slider round" for="dark-mode-checkbox"></label>
     </div>
+  </div>
+
+  <!-- Main content section -->
+  <div class="content">
+    <!-- Heading for the podcast points -->
 
     <!-- Podcast card content -->
     <div id="podcast-card">
       <!-- Podcast image -->
-      <img id="podcast-image" src="placeholder.jpg" alt="Podcast Image">
       <!-- Podcast title and points -->
-      <div id="podcast-title">Podcast Title</div>
       <div id="podcast"></div>
-      <div id="podcast-points">Key Points will be fetched here</div>
+      <h3 class="section-heading">The One Percent</h3>
+      <div id="podcast-points"></div>
     </div>
   </div>
 
   <script src="popup.js"></script>
 </body>
 </html>
+
 
 
 
