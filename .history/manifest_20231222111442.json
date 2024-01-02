@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "The Daily Podcast Extension",
-  "description": "Stay updated with the latest podcasts!",
+  "name": "The Daily One Percent Extension",
+  "description": "Podcasts to get one percent better everyday!",
   "version": "1.0",
   "action": {
     "default_popup": "popup.html",
@@ -20,19 +20,11 @@
     "storage",
     "activeTab"
   ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "host_permissions": [
     "https://raw.githubusercontent.com/*"
   ]
 }
+
 
 
 

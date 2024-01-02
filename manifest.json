@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "The Daily One Percent Extension",
-  "description": "Podcasts to get one percent better everyday!",
+  "name": "The Daily One Percent",
+  "description": "Expertly curated daily podcasts for self-improvement",
   "version": "1.0",
   "action": {
     "default_popup": "popup.html",
